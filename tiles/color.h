@@ -8,7 +8,7 @@
 
 #include <string>
 
-namespace Tile {
+namespace cong::Tile {
 
   enum class Color : unsigned int {
     Brown,

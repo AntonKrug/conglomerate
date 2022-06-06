@@ -8,10 +8,12 @@
 
 #include <string>
 
-class UI {
-public:
-  static std::string moneyHumanFriendly(int amount);
+namespace cong {
+  class UI {
+  public:
+    static std::string moneyHumanFriendly(int amount);
 
-};
+  };
+}
 
 #endif //CONGLOMERATE_INTERFACE_H

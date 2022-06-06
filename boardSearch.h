@@ -8,23 +8,31 @@
 
 #include "tiles/color.h"
 #include "tiles/type.h"
+#include "menu/item.h"
 #include "board.h"
 
-class BoardSearch {
-private:
-  Board &board;
+namespace cong {
 
-public:
-  BoardSearch(Board &boardInit);
+  class BoardSearch {
+  private:
+    Board &board;
 
-  BoardSearch* filterColor(Tile::Color color);
-  BoardSearch* filterOwner(Player &player);
-  BoardSearch* filterType(Tile::Type type);
-  BoardSearch* filterMortaged(bool mortaged);
+  public:
+    BoardSearch(Board &boardInit);
 
-  unsigned int size();
-  std::vector<MenuItem> toMenu();
-};
+    BoardSearch *filterColor(Tile::Color color);
+
+    BoardSearch *filterOwner(Player &player);
+
+    BoardSearch *filterType(Tile::Type type);
+
+    BoardSearch *filterMortaged(bool mortaged);
+
+    unsigned int size();
+
+    std::vector<Menu::Item> toMenu();
+  };
+}
 
 #endif //CONGLOMERATE_BOARDSEARCH_H
 

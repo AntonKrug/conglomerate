@@ -9,21 +9,23 @@
 #include "color.h"
 #include "property.h"
 
-namespace Tile {
+namespace cong::Tile {
 
-class County : public Tile::Property {
+  class County : public Tile::Property {
   public:
     Color color;
-    int   upgradeLevel;
+    int upgradeLevel;
 
-    int   costHouse; // upgrade 1-4 levels
-    int   costHotel; // upgrade to level 5 hotel
+    int costHouse; // upgrade 1-4 levels
+    int costHotel; // upgrade to level 5 hotel
 
     void upgradeIncrement();
+
     void upgradeStripDown();
 
     void doAction(Player &currentPlayer);
   };
+
 
 }
 

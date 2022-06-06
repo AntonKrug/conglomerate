@@ -12,22 +12,22 @@
 
 #include <string>
 
-namespace Tile {
+namespace cong::Tile {
 
   class Basic {
   public:
-    Tile::Type  type;
+    Tile::Type type;
     std::string name;
     std::string shortName;
     std::string description;
-    bool        canBePurchased;
+    bool canBePurchased;
 
     virtual void displayTile(void);
-    virtual int  rentToPay(void);
+
+    virtual int rentToPay(void);
+
     virtual void doAction(Player &currentPlayer);
   };
 
 }
-
-
 #endif //CONGLOMERATE_INTERFACE_H

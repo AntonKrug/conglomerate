@@ -5,6 +5,6 @@
 
 #include "interface.h"
 
-std::string UI::moneyHumanFriendly(int amount) {
+std::string cong::UI::moneyHumanFriendly(int amount) {
   return std::string();
 }

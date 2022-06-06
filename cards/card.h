@@ -12,14 +12,18 @@
 #include <string>
 #include <functional>
 
-class Card {
-private:
-public:
-  const std::string text;
-  const bool keepTheCard;
-  const int cashFlow;
+namespace cong {
 
-  const std::function<void (Player &, Board &)> doAction
-};
+  class Card {
+  private:
+  public:
+    const std::string text;
+    const bool keepTheCard;
+    const int cashFlow;
+
+    const std::function<void(Player &, Board &)> doAction
+  };
+
+}
 
 #endif //CONGLOMERATE_CARD_H

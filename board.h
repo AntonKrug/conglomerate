@@ -10,9 +10,13 @@
 
 #include <array>
 
-class Board {
-public:
-  const std::array<Tile::Basic,1> tiles;
-};
+namespace cong {
+
+  class Board {
+  public:
+    const std::array<Tile::Basic, 1> tiles;
+  };
+
+}
 
 #endif //CONGLOMERATE_BOARD_H

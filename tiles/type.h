@@ -6,7 +6,7 @@
 #ifndef CONGLOMERATE_TYPE_H
 #define CONGLOMERATE_TYPE_H
 
-namespace Tile {
+namespace cong::Tile {
 
   enum class Type : unsigned int {
     Go,

@@ -10,15 +10,15 @@
 
 #include <array>
 
-namespace Tile {
+namespace cong::Tile {
 
-class Property: public Tile::Basic {
-    int     price;
+  class Property : public Tile::Basic {
+    int price;
 
-    bool    mortaged;
-    int     mortage;
+    bool mortaged;
+    int mortage;
 
-    Player* owner;
+    Player *owner;
 
     // For County 4 levels of houses to rent + level 5 is hotel rent
     // For Province 1-4 rents for how many provinces are owned
@@ -26,6 +26,7 @@ class Property: public Tile::Basic {
     std::array<int, 5> rent;
 
   };
+
 }
 
 #endif //CONGLOMERATE_PROPERTY_H

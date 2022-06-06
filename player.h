@@ -11,18 +11,24 @@
 #include <string>
 #include <vector>
 
-class Player {
-private:
-  std::vector<Card> cards;
-  int               cash; // when negative then owning money
+namespace cong {
 
-public:
-  std::string       name;
-  bool              playing;
+  class Player {
+  private:
+    std::vector<Card> cards;
+    int cash; // when negative then owning money
 
-  int  getNetWorth(void);
-  void moneyGetFromBank(int amount);
-  void moneyReturnToBank(int amount);
-};
+  public:
+    std::string name;
+    bool playing;
+
+    int getNetWorth(void);
+
+    void moneyGetFromBank(int amount);
+
+    void moneyReturnToBank(int amount);
+  };
+
+}
 
 #endif //CONGLOMERATE_PLAYER_H

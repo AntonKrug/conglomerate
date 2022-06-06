@@ -10,9 +10,11 @@
 
 #include <list>
 
-class Game {
-  std::list<Player> players;
-};
+namespace cong {
+  class Game {
+    std::list<Player> players;
+  };
+}
 
 
 #endif //CONGLOMERATE_GAME_H
