@@ -12,7 +12,7 @@
 
 class Board {
 public:
-  const std::array<Tile,1> tiles;
+  const std::array<Tile::Basic,1> tiles;
 };
 
 #endif //CONGLOMERATE_BOARD_H

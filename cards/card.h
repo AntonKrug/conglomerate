@@ -7,6 +7,7 @@
 #define CONGLOMERATE_CARD_H
 
 #include "../player.h"
+#include "../board.h"
 
 #include <string>
 #include <functional>
