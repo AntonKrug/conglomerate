@@ -8,12 +8,15 @@
 
 #include "../player.h"
 
+#include "type.h"
+
 #include <string>
 
 namespace Tile {
 
   class Basic {
   public:
+    Tile::Type  type;
     std::string name;
     std::string shortName;
     std::string description;
