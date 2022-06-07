@@ -17,16 +17,31 @@ namespace cong {
   private:
     Board &board;
 
+    bool whereColor;
+    bool whereOwner;
+    bool whereType;
+    bool whereMortaged;
+
+    Tile::Color color;
+    Player player;
+    Tile::Type type;
+    bool mortaged;
+
+    bool justCounting;
+    std::vector<Menu::Item> menu;
+
+    unsigned int executeSearch(void);
+
   public:
     BoardSearch(Board &boardInit);
 
-    BoardSearch *filterColor(Tile::Color color);
+    BoardSearch *filterColor(Tile::Color searchColor);
 
-    BoardSearch *filterOwner(Player &player);
+    BoardSearch *filterOwner(Player &searchPlayer);
 
-    BoardSearch *filterType(Tile::Type type);
+    BoardSearch *filterType(Tile::Type searchType);
 
-    BoardSearch *filterMortaged(bool mortaged);
+    BoardSearch *filterMortaged(bool searchMortaged);
 
     unsigned int size();
 
