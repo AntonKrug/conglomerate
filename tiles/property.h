@@ -30,6 +30,12 @@ namespace cong::Tile {
              const std::string descriptionInit, const unsigned int priceInit, unsigned int mortageInit,
              std::array<unsigned int, 5> rentInit);
 
+    virtual void displayTile(void) = 0;
+
+    virtual int rentToPay(void) = 0;
+
+    virtual void doAction(Player &currentPlayer) = 0;
+
   };
 
 }
