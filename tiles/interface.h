@@ -22,6 +22,9 @@ namespace cong::Tile {
     std::string description;
     bool canBePurchased;
 
+    Basic(const Tile::Type typeInit, const std::string nameInit, const std::string shortNameInit,
+          const std::string descriptionInit, const bool canBePurchasedInit);
+
     virtual void displayTile(void);
 
     virtual int rentToPay(void);
