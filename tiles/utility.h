@@ -17,6 +17,12 @@ namespace cong::Tile {
             const unsigned int priceInit, const unsigned int rentInit, const unsigned int rentBothInit,
             const unsigned int mortageInit);
 
+    void displayTile(void) override;
+
+    int rentToPay(void) override;
+
+    void doAction(Player &currentPlayer) override;
+
   };
 }
 

@@ -8,6 +8,11 @@
 
 #include <string>
 
+#include <type_traits>
+
+static_assert(!std::is_abstract<cong::Tile::Utility>(), "cong::Tile::Utility should not be abstract");
+
+
 cong::Tile::Utility::Utility(const std::string nameInit,
                              const std::string nameShortInit,
                              const std::string descriptionInit,
@@ -20,5 +25,17 @@ cong::Tile::Utility::Utility(const std::string nameInit,
                                       priceInit, mortageInit,
                                       {rentInit, rentBothInit, 0, 0, 0})
                              {
+
+}
+
+void cong::Tile::Utility::displayTile(void) {
+
+}
+
+int cong::Tile::Utility::rentToPay(void) {
+  return 0;
+}
+
+void cong::Tile::Utility::doAction(cong::Player &currentPlayer) {
 
 }
