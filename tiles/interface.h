@@ -3,8 +3,8 @@
 // License: MIT
 //
 
-#ifndef CONGLOMERATE_INTERFACE_H
-#define CONGLOMERATE_INTERFACE_H
+#ifndef CONGLOMERATE_TILE_INTERFACE_H
+#define CONGLOMERATE_TILE_INTERFACE_H
 
 #include "../player.h"
 
@@ -25,12 +25,12 @@ namespace cong::Tile {
     Basic(const Tile::Type typeInit, const std::string nameInit, const std::string shortNameInit,
           const std::string descriptionInit, const bool canBePurchasedInit);
 
-    virtual void displayTile(void);
+    virtual void displayTile(void) = 0;
 
-    virtual int rentToPay(void);
+    virtual int rentToPay(void) = 0;
 
-    virtual void doAction(Player &currentPlayer);
+    virtual void doAction(Player &currentPlayer) = 0;
   };
 
 }
-#endif //CONGLOMERATE_INTERFACE_H
+#endif //CONGLOMERATE_TILE_INTERFACE_H
