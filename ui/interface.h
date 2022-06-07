@@ -3,8 +3,8 @@
 // License: MIT
 //
 
-#ifndef CONGLOMERATE_INTERFACE_H
-#define CONGLOMERATE_INTERFACE_H
+#ifndef CONGLOMERATE_UI_INTERFACE_H
+#define CONGLOMERATE_UI_INTERFACE_H
 
 #include <string>
 
@@ -16,4 +16,4 @@ namespace cong {
   };
 }
 
-#endif //CONGLOMERATE_INTERFACE_H
+#endif //CONGLOMERATE_UI_INTERFACE_H
