@@ -6,6 +6,10 @@
 #include "property.h"
 #include "type.h"
 
+#include <type_traits>
+
+static_assert(std::is_abstract<cong::Tile::Property>(), "cong::Tile::Property should be abstract");
+
 cong::Tile::Property::Property(const Tile::Type typeInit, const std::string nameInit, const std::string shortNameInit,
                                const std::string descriptionInit, const unsigned int priceInit,
                                unsigned int mortageInit, std::array<unsigned int, 5> rentInit):
@@ -17,4 +21,3 @@ cong::Tile::Property::Property(const Tile::Type typeInit, const std::string name
                                owner(nullptr),
                                rent(rent){
 }
-
