@@ -6,7 +6,7 @@
 #ifndef CONGLOMERATE_PLAYER_H
 #define CONGLOMERATE_PLAYER_H
 
-#include "cards/card.h"
+#include "card/card.h"
 
 #include <string>
 #include <vector>
@@ -19,14 +19,14 @@ namespace cong {
     int cash; // when negative then owning money
 
   public:
-    std::string name;
+    const std::string name;
     bool playing;
+
+    explicit Player(std::string name);
 
     int getNetWorth(void);
 
-    void moneyGetFromBank(int amount);
-
-    void moneyReturnToBank(int amount);
+    void moneyFromBank(int amount);
   };
 
 }

@@ -6,8 +6,8 @@
 #ifndef CONGLOMERATE_COUNTY_H
 #define CONGLOMERATE_COUNTY_H
 
-#include "color.h"
-#include "property.h"
+#include "tile/color.h"
+#include "tile/property.h"
 
 namespace cong::Tile {
 
@@ -19,13 +19,14 @@ namespace cong::Tile {
     int costHouse; // upgrade 1-4 levels
     int costHotel; // upgrade to level 5 hotel
 
+
+
     void upgradeIncrement();
 
     void upgradeStripDown();
 
     void doAction(Player &currentPlayer);
   };
-
 
 }
 

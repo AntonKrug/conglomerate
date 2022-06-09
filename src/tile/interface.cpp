@@ -3,9 +3,10 @@
 // License: MIT
 //
 
-#include "interface.h"
+#include "tile/interface.h"
 
 #include <type_traits>
+#include <utility>
 
 static_assert(std::is_abstract<cong::Tile::Basic>(), "cong::Tile::Basic should be abstract");
 
@@ -14,9 +15,12 @@ cong::Tile::Basic::Basic(const cong::Tile::Type typeInit,
                          const std::string shortNameInit,
                          const std::string descriptionInit,
                          const bool canBePurchasedInit):
+
                          type(typeInit),
-                         name(nameInit),
-                         shortName(shortNameInit),
-                         description(descriptionInit),
-                         canBePurchased(canBePurchasedInit) {
+                         name(std::move(nameInit)),
+                         shortName(std::move(shortNameInit)),
+                         description(std::move(descriptionInit)),
+                         canBePurchased(canBePurchasedInit)
+{
+  // Nothing to do in the constructor
 }

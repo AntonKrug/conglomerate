@@ -3,7 +3,7 @@
 // License: MIT
 //
 
-#include "interface.h"
+#include "ui/interface.h"
 
 std::string cong::UI::moneyHumanFriendly(int amount) {
   return std::string();

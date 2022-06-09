@@ -6,8 +6,8 @@
 #ifndef CONGLOMERATE_BOARDSEARCH_H
 #define CONGLOMERATE_BOARDSEARCH_H
 
-#include "tiles/color.h"
-#include "tiles/type.h"
+#include "tile/color.h"
+#include "tile/type.h"
 #include "menu/item.h"
 #include "board.h"
 

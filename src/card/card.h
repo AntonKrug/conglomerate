@@ -6,22 +6,30 @@
 #ifndef CONGLOMERATE_CARD_H
 #define CONGLOMERATE_CARD_H
 
-#include "../player.h"
-#include "../board.h"
+//#include "player.h"
+//#include "board.h"
 
 #include <string>
 #include <functional>
 
 namespace cong {
+  class Player;
+  class Board;
 
   class Card {
-  private:
   public:
     const std::string text;
     const bool keepTheCard;
     const int cashFlow;
 
-    const std::function<void(Player &, Board &)> doAction
+    const std::function<void(cong::Player &, const cong::Board &)> doAction;
+
+    Card(
+        std::string textInit,
+        bool keepTheCardInit,
+        int cashFlowInit,
+        std::function<void(cong::Player &, const cong::Board &)> doActionInit);
+
   };
 
 }

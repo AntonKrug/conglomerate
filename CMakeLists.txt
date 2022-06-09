@@ -3,4 +3,8 @@ project(conglomerate)
 
 set(CMAKE_CXX_STANDARD 17)
 
-add_executable(conglomerate main.cpp cards/card.cpp player.cpp player.h cards/card.h ui/interface.h ui/base.cpp game.h board.h tiles/interface.h tiles/county.h tiles/color.h tiles/property.h bank.h ui/terminalStdout.cpp boardSearch.h tiles/type.h menu/item.h tiles/utility.h tiles/utility.cpp tiles/interface.cpp tiles/property.cpp)
+#set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -stdlib=libc++")
+
+include_directories (${PROJECT_SOURCE_DIR}/src)
+
+add_executable(conglomerate src/main.cpp src/card/card.cpp src/player.cpp src/player.h src/card/card.h src/ui/interface.h src/ui/base.cpp src/game.h src/board.h src/tile/interface.h src/tile/county.h src/tile/color.h src/tile/property.h src/bank.h src/ui/terminalStdout.cpp src/boardSearch.h src/tile/type.h src/menu/item.h src/tile/utility.h src/tile/utility.cpp src/tile/interface.cpp src/tile/property.cpp src/auction.h src/tile/province.h src/tile/province.cpp src/board.cpp)

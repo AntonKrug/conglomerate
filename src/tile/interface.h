@@ -6,9 +6,9 @@
 #ifndef CONGLOMERATE_TILE_INTERFACE_H
 #define CONGLOMERATE_TILE_INTERFACE_H
 
-#include "../player.h"
+#include "player.h"
 
-#include "type.h"
+#include "tile/type.h"
 
 #include <string>
 
@@ -22,14 +22,17 @@ namespace cong::Tile {
     std::string description;
     bool canBePurchased;
 
-    Basic(const Tile::Type typeInit, const std::string nameInit, const std::string shortNameInit,
-          const std::string descriptionInit, const bool canBePurchasedInit);
+    Basic(Tile::Type typeInit,
+          std::string nameInit,
+          std::string shortNameInit,
+          std::string descriptionInit,
+          bool canBePurchasedInit);
 
-    virtual void displayTile(void) = 0;
+    virtual void displayTile() = 0;
 
-    virtual int rentToPay(void) = 0;
+//    virtual int rentToPay() = 0;
 
-    virtual void doAction(Player &currentPlayer) = 0;
+//    virtual void doAction(Player &currentPlayer) = 0;
   };
 
 }
