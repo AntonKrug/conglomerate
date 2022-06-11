@@ -10,6 +10,7 @@
 //#include "board.h"
 
 #include <string>
+#include <optional>
 #include <functional>
 
 namespace cong {
@@ -21,13 +22,16 @@ namespace cong {
     std::string text;
     bool keepTheCard;
     int cashFlow;
-    std::function<void(cong::Player &, const cong::Board &)> doAction;
+    std::optional<std::function<void(cong::Player &, const cong::Board &)>> doAction;
 
-    Card(
-        std::string textInit,
-        bool keepTheCardInit,
-        int cashFlowInit,
-        std::function<void(cong::Player &, const cong::Board &)> doActionInit);
+    Card(std::string textInit,
+         bool keepTheCardInit,
+         int cashFlowInit,
+         std::function<void(cong::Player &, const cong::Board &)> doActionInit);
+
+    Card(std::string textInit,
+         bool keepTheCardInit,
+         int cashFlowInit);
 
 //    void doCommonAction(cong::Player &player);
     void swap(Card& other);

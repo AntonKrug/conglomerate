@@ -28,6 +28,16 @@ void cong::Card::swap(cong::Card &other) {
   doAction.swap(other.doAction);
 }
 
+cong::Card::Card(
+    std::string textInit,
+    bool keepTheCardInit,
+    int cashFlowInit) :
+
+    text(std::move(textInit)),
+    keepTheCard(keepTheCardInit),
+    cashFlow(cashFlowInit)
+    {}
+
 //void cong::Card::doCommonAction(cong::Player &player) {
 //  player.moveFromBank(100);
 //}

@@ -34,8 +34,9 @@ cong::Card card("karta", true, 0, [] (cong::Player &p, const cong::Board &b) {
 int main() {
   std::cout << "Hello, World!" << std::endl;
 
-
-  card.doAction(player, board);
+  if (card.doAction) {
+    card.doAction.value()(player, board);
+  }
 
 //  func2([] (cong::Player &pla, const cong::Board &a) {
 ////    std::cout << "22" << " " << a*2 << std::endl;
