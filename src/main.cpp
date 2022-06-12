@@ -38,11 +38,11 @@ int main() {
 
   cong::Board::listTiles();
 
-  for (const auto &c:game.deck[cong::deckToInt(cong::CardDeck::Chance)]) {
+  for (const auto &c:game.deck[cong::deckToInt(cong::Deck::Chance)]) {
     handleCard(c);
   }
 
-  for (const auto &c:game.deck[cong::deckToInt(cong::CardDeck::Community)]) {
+  for (const auto &c:game.deck[cong::deckToInt(cong::Deck::Community)]) {
     handleCard(c);
   }
 

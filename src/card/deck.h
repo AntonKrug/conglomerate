@@ -10,18 +10,18 @@
 
 namespace cong {
 
-  enum class CardDeck {
+  enum class Deck {
     Chance = 0,
     Community = 1
   };
 
-  constexpr const char *deckToString(CardDeck deck) noexcept {
+  constexpr const char *deckToString(Deck deck) noexcept {
     switch (deck) {
 
-      case CardDeck::Chance:
+      case Deck::Chance:
         return "Chance";
 
-      case CardDeck::Community:
+      case Deck::Community:
         return "Community";
 
       // no exceptions and no default state
@@ -29,7 +29,7 @@ namespace cong {
   }
 
 
-  constexpr unsigned int deckToInt(CardDeck deck) {
+  constexpr unsigned int deckToInt(Deck deck) {
     return static_cast<unsigned int>(deck);
   }
 
