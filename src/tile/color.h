@@ -21,7 +21,7 @@ namespace cong::Tile {
     Navy
   };
 
-  constexpr const char *colorToString(Color color) noexcept {
+  constexpr const char *toString(Color color) noexcept {
     switch (color) {
 
       case Color::Brown:
