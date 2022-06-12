@@ -37,10 +37,11 @@ void cong::tile::Utility::displayTile() {
   std::cout << "Utility " << name << std::endl;
 }
 
-//
-//int cong::Tile::Utility::rentToPay() {
-//  return 0;
-//}
+
+unsigned int cong::tile::Utility::rentToPay(cong::Player &currentPlayer) {
+  return 0;
+}
+
 //
 //void cong::Tile::Utility::doAction(cong::Player &currentPlayer) {
 //

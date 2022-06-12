@@ -30,14 +30,17 @@ cong::tile::Province::Province(
         )
     { } // Nothing to do in the constructor
 
+
 void cong::tile::Province::displayTile() {
   std::cout << "Province " << name << std::endl;
 }
 
-//int cong::Tile::Province::rentToPay() {
-//  return 0;
-//}
-//
+
+unsigned int cong::tile::Province::rentToPay(cong::Player &currentPlayer) {
+  return 0;
+}
+
+
 //void cong::Tile::Province::doAction(cong::Player &currentPlayer) {
 //
 //}

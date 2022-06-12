@@ -33,8 +33,6 @@ namespace cong::tile {
 
     virtual void displayTile() = 0;
 
-//    virtual int rentToPay() = 0;
-
 //    virtual void doAction(Player &currentPlayer) = 0;
 
   };

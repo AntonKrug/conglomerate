@@ -24,7 +24,7 @@ namespace cong::tile {
 
     void displayTile() override;
 
-//    int rentToPay() override;
+    unsigned int rentToPay(cong::Player &currentPlayer) override;
 
 //    void doAction(Player &currentPlayer) override;
 

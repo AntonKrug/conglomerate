@@ -7,7 +7,7 @@
 #define CONGLOMERATE_PROPERTY_H
 
 #include "tile/interface.h"
-#include "player.h"  //TODO: is it really needed?
+#include "player.h"
 
 #include <array>
 
@@ -36,6 +36,7 @@ namespace cong::tile {
              std::array<unsigned int, 6> rentInit,
              unsigned int mortgageInit) noexcept;
 
+    virtual unsigned int rentToPay(cong::Player &currentPlayer) = 0;
 
   };
 

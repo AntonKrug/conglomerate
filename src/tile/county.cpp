@@ -46,6 +46,11 @@ void cong::tile::County::upgradeStripDown() {
 }
 
 
+unsigned int cong::tile::County::rentToPay(cong::Player &currentPlayer)  {
+  return 0;
+}
+
+
 void cong::tile::County::displayTile() {
     std::cout << "County " << name << std::endl;
 }
