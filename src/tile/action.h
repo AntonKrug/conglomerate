@@ -10,10 +10,6 @@
 
 #include <string>
 
-namespace cong {
-  class Game;
-}
-
 namespace cong::tile {
 
   class Action : public Basic {
