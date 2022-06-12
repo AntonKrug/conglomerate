@@ -9,9 +9,9 @@
 #include "tile/property.h"
 
 
-namespace cong::Tile {
+namespace cong::tile {
 
-  class Province: public cong::Tile::Property {
+  class Province: public cong::tile::Property {
   public:
 
     Province(

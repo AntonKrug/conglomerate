@@ -5,8 +5,7 @@
 
 #include <iostream>
 
-cong::Game game;
-
+static cong::Game game;
 
 void handleCard(const cong::Card &card) {
   std::cout << " ----------------- " << std::endl;

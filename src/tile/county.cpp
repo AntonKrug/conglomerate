@@ -6,18 +6,22 @@
 #include "county.h"
 
 #include <iostream>
+#include <type_traits>
 
-cong::Tile::County::County(
+static_assert(!std::is_abstract<cong::tile::County>(), "cong::tile::County should not be abstract");
+
+
+cong::tile::County::County(
     std::string nameInit,
     std::string nameShortInit,
-    cong::Tile::Color colorInit,
+    cong::tile::Color colorInit,
     unsigned int priceInit,
     std::array<unsigned int, 6> rentInit,
     unsigned int costToUpgradeInit,
     unsigned int mortgageInit) noexcept :
 
-    Tile::Property(
-        cong::Tile::Type::County,
+    tile::Property(
+        cong::tile::Type::County,
         std::move(nameInit),
         std::move(nameShortInit),
         "",
@@ -32,15 +36,15 @@ cong::Tile::County::County(
     { }
 
 
-void cong::Tile::County::upgradeIncrement() {
+void cong::tile::County::upgradeIncrement() {
 
 }
 
 
-void cong::Tile::County::upgradeStripDown() {
+void cong::tile::County::upgradeStripDown() {
 
 }
 
-void cong::Tile::County::displayTile() {
+void cong::tile::County::displayTile() {
     std::cout << "County " << name << std::endl;
 }

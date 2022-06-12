@@ -10,9 +10,9 @@
 
 #include <string>
 
-namespace cong::Tile {
+namespace cong::tile {
 
-class Nop: public cong::Tile::Basic {
+class Nop: public cong::tile::Basic {
 public:
 
   Nop(std::string nameInit, std::string nameShortInit, std::string descriptionInit);

@@ -7,16 +7,20 @@
 #include "tile/type.h"
 
 #include <iostream>
+#include <type_traits>
 
-cong::Tile::Nop::Nop(std::string nameInit, std::string nameShortInit, std::string descriptionInit) :
-  cong::Tile::Basic(
-      cong::Tile::Type::Nop,
+static_assert(!std::is_abstract<cong::tile::Nop>(), "cong::tile::Nop should not be abstract");
+
+
+cong::tile::Nop::Nop(std::string nameInit, std::string nameShortInit, std::string descriptionInit) :
+  cong::tile::Basic(
+      cong::tile::Type::Nop,
       std::move(nameInit),
       std::move(nameShortInit),
       std::move(descriptionInit),
       false)
 { }
 
-void cong::Tile::Nop::displayTile() {
+void cong::tile::Nop::displayTile() {
   std::cout << "No-operation tile " << name << std::endl;
 }

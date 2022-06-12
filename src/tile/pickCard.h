@@ -9,9 +9,9 @@
 #include "tile/interface.h"
 #include "card/deck.h"
 
-namespace cong::Tile {
+namespace cong::tile {
 
-  class PickCard: public cong::Tile::Basic {
+  class PickCard: public cong::tile::Basic {
   public:
     const cong::Deck deck;
 

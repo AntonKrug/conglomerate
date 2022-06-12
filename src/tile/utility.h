@@ -10,7 +10,7 @@
 
 #include <string>
 
-namespace cong::Tile {
+namespace cong::tile {
 
   class Utility: public Property {
   public:

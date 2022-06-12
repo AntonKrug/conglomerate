@@ -22,30 +22,30 @@ namespace cong {
     bool whereType;
     bool whereMortaged;
 
-    Tile::Color color;
+    tile::Color color;
     Player player;
-    Tile::Type type;
+    tile::Type type;
     bool mortaged;
 
     bool justCounting;
-    std::vector<Menu::Item> menu;
+    std::vector<menu::Item> menu;
 
     unsigned int executeSearch(void);
 
   public:
     BoardSearch(Board &boardInit);
 
-    BoardSearch *filterColor(Tile::Color searchColor);
+    BoardSearch *filterColor(tile::Color searchColor);
 
     BoardSearch *filterOwner(Player &searchPlayer);
 
-    BoardSearch *filterType(Tile::Type searchType);
+    BoardSearch *filterType(tile::Type searchType);
 
     BoardSearch *filterMortaged(bool searchMortaged);
 
     unsigned int size();
 
-    std::vector<Menu::Item> toMenu();
+    std::vector<menu::Item> toMenu();
   };
 }
 

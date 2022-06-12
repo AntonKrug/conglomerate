@@ -6,7 +6,7 @@
 #ifndef CONGLOMERATE_TYPE_H
 #define CONGLOMERATE_TYPE_H
 
-namespace cong::Tile {
+namespace cong::tile {
 
   enum class Type : unsigned int {
     Nop,

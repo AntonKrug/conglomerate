@@ -12,7 +12,7 @@
 #include <functional>
 #include <string>
 
-namespace cong::Menu {
+namespace cong::menu {
 
   class Item {
     std::string name;

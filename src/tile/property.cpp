@@ -9,10 +9,10 @@
 #include <type_traits>
 #include <utility>
 
-static_assert(std::is_abstract<cong::Tile::Property>(), "cong::Tile::Property should be abstract");
+static_assert(std::is_abstract<cong::tile::Property>(), "cong::Tile::Property should be abstract");
 
-cong::Tile::Property::Property(
-    const Tile::Type typeInit,
+cong::tile::Property::Property(
+    const tile::Type typeInit,
     std::string nameInit,
     std::string nameShortInit,
     std::string descriptionInit,
@@ -20,11 +20,11 @@ cong::Tile::Property::Property(
     std::array<unsigned int, 6> rentInit,
     const unsigned int mortgageInit):
 
-    Tile::Basic(typeInit,
-               std::move(nameInit),
-               std::move(nameShortInit),
-               std::move(descriptionInit),
-               true),
+    tile::Basic(typeInit,
+                std::move(nameInit),
+                std::move(nameShortInit),
+                std::move(descriptionInit),
+                true),
     price(priceInit),
     mortgaged(false),
     mortgage(mortgageInit),

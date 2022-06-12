@@ -12,17 +12,17 @@
 
 #include <string>
 
-namespace cong::Tile {
+namespace cong::tile {
 
   class Basic {
   public:
-    Tile::Type type;
+    tile::Type type;
     std::string name;
     std::string nameShort;
     std::string description;
     bool canBePurchased;
 
-    Basic(Tile::Type typeInit,
+    Basic(tile::Type typeInit,
           std::string nameInit,
           std::string nameShortInit,
           std::string descriptionInit,

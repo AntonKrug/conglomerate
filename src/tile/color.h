@@ -8,7 +8,7 @@
 
 #include <string>
 
-namespace cong::Tile {
+namespace cong::tile {
 
   enum class Color : unsigned int {
     Brown,
@@ -16,9 +16,7 @@ namespace cong::Tile {
     Pink,
     Orange,
     Red,
-    Yellow,
-    Green,
-    Navy
+    Yellow
   };
 
   constexpr const char *colorToString(Color color) noexcept {
@@ -41,13 +39,7 @@ namespace cong::Tile {
 
       case Color::Yellow:
         return "Yellow";
-
-      case Color::Green:
-        return "Green";
-
-      case Color::Navy:
-        return "Navy";
-
+        
         // no exceptions and no default state
     }
   }

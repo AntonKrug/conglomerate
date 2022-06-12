@@ -6,10 +6,14 @@
 #include "pickCard.h"
 
 #include <iostream>
+#include <type_traits>
 
-cong::Tile::PickCard::PickCard(const cong::Deck deck) :
+static_assert(!std::is_abstract<cong::tile::PickCard>(), "cong::tile::PickCard should not be abstract");
+
+
+cong::tile::PickCard::PickCard(const cong::Deck deck) :
   Basic(
-      cong::Tile::Type::PickCard,
+      cong::tile::Type::PickCard,
       cong::deckToString(deck),
       "Card",
       "Draw a card",
@@ -18,6 +22,6 @@ cong::Tile::PickCard::PickCard(const cong::Deck deck) :
   {}
 
 
-void cong::Tile::PickCard::displayTile() {
+void cong::tile::PickCard::displayTile() {
   std::cout << "Pick card -> " << name << std::endl;
 }

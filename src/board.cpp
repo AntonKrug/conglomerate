@@ -5,49 +5,41 @@
 
 #include "board.h"
 
-cong::Tile::Utility cong::Board::post(      "Post Office",  "Post", 37u, 1u, 3u, 19u);
-cong::Tile::Utility cong::Board::internet(  "Internet",     "Inet", 37u, 1u, 3u, 19u);
+cong::tile::Utility cong::Board::post(      "Post Office", "Post", 37, 1, 3, 19);
+cong::tile::Utility cong::Board::internet(  "Internet",    "Inet", 37, 1, 3, 19);
 
-cong::Tile::Province cong::Board::munster(  "Munster",      "P:Mu",  50u, {{ 7u, 13u, 25u, 50u, 0u }}, 25u);
-cong::Tile::Province cong::Board::connaught("Connaught",    "P:Co",  50u, {{ 7u, 13u, 25u, 50u, 0u }}, 25u);
-cong::Tile::Province cong::Board::leinster( "Leinster",     "P:Le",  50u, {{ 7u, 13u, 25u, 50u, 0u }}, 25u);
-cong::Tile::Province cong::Board::ulster(   "Ulster",       "P:Ul",  50u, {{ 7u, 13u, 25u, 50u, 0u }}, 25u);
+cong::tile::Province cong::Board::munster(  "Munster",     "P:Mu", 50, {{7, 13, 25, 50, 0 }}, 25);
+cong::tile::Province cong::Board::connaught("Connaught",   "P:Co", 50, {{7, 13, 25, 50, 0 }}, 25);
+cong::tile::Province cong::Board::leinster( "Leinster",    "P:Le", 50, {{7, 13, 25, 50, 0 }}, 25);
+cong::tile::Province cong::Board::ulster(   "Ulster",      "P:Ul", 50, {{7, 13, 25, 50, 0 }}, 25);
 
-cong::Tile::County cong::Board::westmeath(  "Westmeath",    "C:WH", cong::Tile::Color::Brown,  15u, {{  1u,  3u,   7u,  22u,  40u,  62u }}, 12u, 7u);
-cong::Tile::County cong::Board::donegal(    "Donegal",      "C:DL", cong::Tile::Color::Brown,  15u, {{  2u,  5u,  15u,  45u,  80u, 112u }}, 12u, 7u);
+cong::tile::County cong::Board::westmeath(  "Westmeath",   "C:WH", cong::tile::Color::Brown,  15, {{ 1,  3,   7,  22,  40,  62 }}, 12,  7);
+cong::tile::County cong::Board::donegal(    "Donegal",     "C:DL", cong::tile::Color::Brown,  15, {{ 2,  5,  15,  45,  80, 112 }}, 12,  7);
 
-cong::Tile::County cong::Board::sligo(      "Sligo",        "C:SO", cong::Tile::Color::Blue,   25u, {{  2u,  7u,  22u,  67u, 100u, 115u }}, 13u, 12u);
-cong::Tile::County cong::Board::down(       "Down",         "C:DN", cong::Tile::Color::Blue,   25u, {{  2u,  8u,  23u,  68u, 100u, 116u }}, 13u, 13u);
-cong::Tile::County cong::Board::laois(      "Laois",        "C:LS", cong::Tile::Color::Blue,   30u, {{  3u, 10u,  25u,  75u, 112u, 150u }}, 13u, 15u);
+cong::tile::County cong::Board::sligo(      "Sligo",       "C:SO", cong::tile::Color::Blue,   25, {{ 2,  7,  22,  67, 100, 115 }}, 13, 12);
+cong::tile::County cong::Board::down(       "Down",        "C:DN", cong::tile::Color::Blue,   25, {{ 2,  8,  23,  68, 100, 116 }}, 13, 13);
+cong::tile::County cong::Board::laois(      "Laois",       "C:LS", cong::tile::Color::Blue,   30, {{ 3, 10,  25,  75, 112, 150 }}, 13, 15);
 
-cong::Tile::County cong::Board::tyrone(     "Tyrone",       "C:TE", cong::Tile::Color::Pink,   35u, {{  3u, 12u,  37u, 112u, 156u, 187u }}, 25u, 17u);
-cong::Tile::County cong::Board::cavan(      "Cavan",        "C:CN", cong::Tile::Color::Pink,   35u, {{  3u, 13u,  38u, 113u, 157u, 188u }}, 25u, 18u);
-cong::Tile::County cong::Board::kerry(      "Kerry",        "C:KY", cong::Tile::Color::Pink,   40u, {{  4u, 15u,  45u, 125u, 175u, 225u }}, 25u, 20u);
+cong::tile::County cong::Board::tyrone(     "Tyrone",      "C:TE", cong::tile::Color::Pink,   35, {{ 3, 12,  37, 112, 156, 187 }}, 25, 17);
+cong::tile::County cong::Board::cavan(      "Cavan",       "C:CN", cong::tile::Color::Pink,   35, {{ 3, 13,  38, 113, 157, 188 }}, 25, 18);
+cong::tile::County cong::Board::kerry(      "Kerry",       "C:KY", cong::tile::Color::Pink,   40, {{ 4, 15,  45, 125, 175, 225 }}, 25, 20);
 
-cong::Tile::County cong::Board::fermanagh(  "Fermanagh",    "C:FE", cong::Tile::Color::Orange, 45u, {{  4u, 17u,  50u, 112u, 187u, 237u }}, 25u, 22u);
-cong::Tile::County cong::Board::leitrim(    "Leitrim",      "C:LM", cong::Tile::Color::Orange, 45u, {{  4u, 18u,  50u, 113u, 188u, 238u }}, 25u, 23u);
-cong::Tile::County cong::Board::galway(     "Galway",       "C:G ", cong::Tile::Color::Orange, 50u, {{  5u, 20u,  55u, 150u, 200u, 250u }}, 25u, 25u);
+cong::tile::County cong::Board::fermanagh(  "Fermanagh",   "C:FE", cong::tile::Color::Orange, 45, {{ 4, 17,  50, 112, 187, 237 }}, 25, 22);
+cong::tile::County cong::Board::leitrim(    "Leitrim",     "C:LM", cong::tile::Color::Orange, 45, {{ 4, 18,  50, 113, 188, 238 }}, 25, 23);
+cong::tile::County cong::Board::galway(     "Galway",      "C:G ", cong::tile::Color::Orange, 50, {{ 5, 20,  55, 150, 200, 250 }}, 25, 25);
 
-cong::Tile::County cong::Board::meath(      "Meath",        "C:MH", cong::Tile::Color::Red,    55u, {{  5u, 22u,  62u, 175u, 218u, 262u }}, 37u, 27u);
-cong::Tile::County cong::Board::kilkenny(   "Kilkenny",     "C:KK", cong::Tile::Color::Red,    55u, {{  5u, 23u,  63u, 175u, 219u, 263u }}, 37u, 28u);
-cong::Tile::County cong::Board::offaly(     "Offaly",       "C:OY", cong::Tile::Color::Red,    60u, {{  6u, 25u,  75u, 187u, 230u, 275u }}, 37u, 30u);
+cong::tile::County cong::Board::meath(      "Meath",       "C:MH", cong::tile::Color::Red,    55, {{ 5, 22,  62, 175, 218, 262 }}, 37, 27);
+cong::tile::County cong::Board::kilkenny(   "Kilkenny",    "C:KK", cong::tile::Color::Red,    55, {{ 5, 23,  63, 175, 219, 263 }}, 37, 28);
+cong::tile::County cong::Board::offaly(     "Offaly",      "C:OY", cong::tile::Color::Red,    60, {{ 6, 25,  75, 187, 230, 275 }}, 37, 30);
 
-cong::Tile::County cong::Board::mayo(       "Mayo",         "C:MO", cong::Tile::Color::Yellow, 65u, {{  6u, 27u,  82u, 200u, 243u, 287u }}, 38u, 32u);
-cong::Tile::County cong::Board::dublin(     "Dublin",       "C:D ", cong::Tile::Color::Yellow, 65u, {{  6u, 28u,  83u, 200u, 244u, 288u }}, 38u, 33u);
-cong::Tile::County cong::Board::louth(      "Louth",        "C:LH", cong::Tile::Color::Yellow, 70u, {{  7u, 30u,  90u, 226u, 256u, 300u }}, 38u, 35u);
+cong::tile::County cong::Board::mayo(       "Mayo",        "C:MO", cong::tile::Color::Yellow, 65, {{ 6, 27,  82, 200, 243, 287 }}, 38, 32);
+cong::tile::County cong::Board::dublin(     "Dublin",      "C:D ", cong::tile::Color::Yellow, 65, {{ 6, 28,  83, 200, 244, 288 }}, 38, 33);
 
-cong::Tile::County cong::Board::wexford(    "Wexford",      "C:WX", cong::Tile::Color::Green,  75u, {{  7u, 32u,  92u, 225u, 275u, 319u }}, 50u, 37u);
-cong::Tile::County cong::Board::limerick(   "Limerick",     "C:L ", cong::Tile::Color::Green,  75u, {{  7u, 33u,  93u, 226u, 278u, 320u }}, 50u, 38u);
-cong::Tile::County cong::Board::waterford(  "Waterford",    "C:WD", cong::Tile::Color::Green,  80u, {{  8u, 40u, 110u, 250u, 300u, 350u }}, 50u, 40u);
+cong::tile::Nop cong::Board::go(            "go",           "-go-", "Collect $50k as you pass 'go'");
+cong::tile::Nop cong::Board::parking(       "Free parking", "Free", "You can stay here for free");
 
-cong::Tile::County cong::Board::cork(       "Cork",         "C:C ", cong::Tile::Color::Navy,   87u, {{  9u, 43u, 125u, 300u, 325u, 375u }}, 50u, 44u);
-cong::Tile::County cong::Board::roscommon(  "Roscommon",    "C:RN", cong::Tile::Color::Navy,   99u, {{ 10u, 50u, 150u, 325u, 350u, 425u }}, 50u, 50u);
-
-cong::Tile::Nop cong::Board::go(            "go",           "-go-", "Collect $50k as you pass 'go'");
-cong::Tile::Nop cong::Board::parking(       "Free parking", "Free", "You can stay here for free");
-
-cong::Tile::PickCard cong::Board::chance(   cong::Deck::Chance);
-cong::Tile::PickCard cong::Board::community(cong::Deck::Community);
+cong::tile::PickCard cong::Board::chance(   cong::Deck::Chance);
+cong::tile::PickCard cong::Board::community(cong::Deck::Community);
 
 
 void cong::Board::listTiles() {
@@ -60,7 +52,7 @@ void cong::Board::listTiles() {
 void cong::Board::reset() {
   for (auto tile:tiles) {
     if (tile->canBePurchased) {
-      auto aProperty = dynamic_cast<cong::Tile::Property *>(tile);
+      auto aProperty = dynamic_cast<cong::tile::Property *>(tile);
 
       aProperty->owner     = nullptr;
       aProperty->mortgaged = false;

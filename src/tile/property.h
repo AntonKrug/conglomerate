@@ -11,9 +11,9 @@
 
 #include <array>
 
-namespace cong::Tile {
+namespace cong::tile {
 
-  class Property : public cong::Tile::Basic {
+  class Property : public cong::tile::Basic {
   public:
     const unsigned int price;
 
@@ -27,7 +27,7 @@ namespace cong::Tile {
     // For Utility 0-1 rents for how many utilities are owned (1-2)
     std::array<unsigned int, 6> rent;
 
-    Property(Tile::Type typeInit,
+    Property(tile::Type typeInit,
              std::string nameInit,
              std::string nameShortInit,
              std::string descriptionInit,

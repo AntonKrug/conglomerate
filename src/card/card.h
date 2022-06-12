@@ -6,9 +6,6 @@
 #ifndef CONGLOMERATE_CARD_H
 #define CONGLOMERATE_CARD_H
 
-//#include "player.h"
-//#include "board.h"
-
 #include <string>
 #include <optional>
 #include <functional>

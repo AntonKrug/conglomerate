@@ -8,9 +8,9 @@
 #include <type_traits>
 #include <utility>
 
-static_assert(std::is_abstract<cong::Tile::Basic>(), "cong::Tile::Basic should be abstract");
+static_assert(std::is_abstract<cong::tile::Basic>(), "cong::Tile::Basic should be abstract");
 
-cong::Tile::Basic::Basic(const cong::Tile::Type typeInit,
+cong::tile::Basic::Basic(const cong::tile::Type typeInit,
                          std::string nameInit,
                          std::string nameShortInit,
                          std::string descriptionInit,

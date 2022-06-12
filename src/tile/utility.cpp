@@ -7,14 +7,14 @@
 
 #include <string>
 
-#include <type_traits>
-#include <utility>
 #include <iostream>
+#include <utility>
+#include <type_traits>
 
-static_assert(!std::is_abstract<cong::Tile::Utility>(), "cong::Tile::Utility should not be abstract");
+static_assert(!std::is_abstract<cong::tile::Utility>(), "cong::tile::Utility should not be abstract");
 
 
-cong::Tile::Utility::Utility(
+cong::tile::Utility::Utility(
     std::string nameInit,
     std::string nameShortInit,
     const unsigned int priceInit,
@@ -34,7 +34,7 @@ cong::Tile::Utility::Utility(
   // Do nothing in the constructor
 }
 
-void cong::Tile::Utility::displayTile() {
+void cong::tile::Utility::displayTile() {
   std::cout << "Utility " << name << std::endl;
 }
 

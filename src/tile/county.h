@@ -9,9 +9,9 @@
 #include "tile/color.h"
 #include "tile/property.h"
 
-namespace cong::Tile {
+namespace cong::tile {
 
-  class County : public Tile::Property {
+  class County : public tile::Property {
   public:
     Color color;
     int upgradeLevel;
@@ -21,7 +21,7 @@ namespace cong::Tile {
     County(
         std::string nameInit,
         std::string nameShortInit,
-        cong::Tile::Color colorInit,
+        cong::tile::Color colorInit,
         unsigned int priceInit,
         std::array<unsigned int, 6> rentInit,
         unsigned int costToUpgradeInit,
