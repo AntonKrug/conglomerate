@@ -18,46 +18,42 @@ namespace cong {
   public:
     std::list<Player> players;
     std::deque<Card> cardsChance = {
-        cong::Card("Advance to Roscommon", false, 0, [] (cong::Player &p, const cong::Board &b) {
-        })
+        cong::Card("Advance to Roscommon.", false, 0),
+        // TODO advance to a tile
+        cong::Card("Advance to Tyrone. If you pass Go, collect 2000$.", false, 0, [] (cong::Player &p, const cong::Board &b) {
+          //TODO: need access to boardsearch, not just board
+          if (p.position > 10) {
+            p.moneyFromBank(2000);
+          }
+          p.moveToPosition(10);
+          // TODO: trigger board action
+        }),
+        cong::Card("Advance to Offaly. If you pass Go, collect 2000$.", false, 0, [] (cong::Player &p, const cong::Board &b) {
+          if (p.position > 20) {
+            p.moneyFromBank(2000);
+          }
+          p.moveToPosition(20);
+        }),
+        cong::Card("Pay private school fees of 1500$.", false, -1500),
+        cong::Card("Get out of Jail card. This card may be kept until needed or sold.", true, 0, [] (cong::Player &p, const cong::Board &b) {
+          // TODO: does player need state for being stuck in jail? So we can unstuck him?
+          // TODO: does the card have value, to be sold?
+        }),
+        cong::Card("Get out of Jail card. This card may be kept until needed or sold.", true, 0, [] (cong::Player &p, const cong::Board &b) {
+          // TODO: does player need state for being stuck in jail? So we can unstuck him?
+          // TODO: does the card have value, to be sold?
+        }),
+        cong::Card("Rush hour traffic! Go back 3 spaces.", false, 0, [] (cong::Player &p, const cong::Board &b) {
+          p.moveSteps(-3);
+          // Do i need to trigger tile action?
+        }),
+        cong::Card("Advance to Go and collect 2000$.", false, 2000, [] (cong::Player &p, const cong::Board &b) {
+          p.moveToPosition(0);
+        }),
+        cong::Card("Sell your shares for a profit. Collect 1500$.", false, 1500),
+
+
     };
-
-//    case (0):
-//    UI.displayCard();
-//    // Move current player to Roscommon.
-//    Game.getCurrentPlayer().jumpTo(Game.getBoard().getRoscommon());
-//    this.putCardOnBottom(drawnCard);
-//
-//    Game.getBoard().tileActions();
-//    break;
-//
-//    case (1):
-//    UI.displayCard("Advance to Tyrone. If you pass Go, collect €2M");
-//    // Move current player to Tyrone.
-//    // If pass Go, add 2000000 to current player cash.
-//    if (Game.getCurrentPlayer().getPosition() > Game.getBoard().getTyrone())
-//    {
-//      Game.getBank().getMoneyFromBank(2000000L);
-//    }
-//    Game.getCurrentPlayer().jumpTo(Game.getBoard().getTyrone());
-//    this.putCardOnBottom(drawnCard);
-//    Game.getBoard().tileActions();
-//    break;
-//
-//    case (2):
-//    UI.displayCard("Pay private school fees of €1.5M");
-//    // Remove 1500000 from current player cash.
-//    Game.getBank().returnMoneyToBank(1500000L);
-//    this.putCardOnBottom(drawnCard);
-//    break;
-//
-//    case (3):
-//    UI.displayCard("GET OUT OF JAIL FREE card.\n This card may be kept until needed or sold.");
-//    // keep card in possession
-//    // Game.getCurrentPlayer().receiveCardJail();
-//    Game.getCurrentPlayer().receiveCard(this, drawnCard);
-//    break;
-
 
     void shuffleCards();
   };

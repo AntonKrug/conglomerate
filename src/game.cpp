@@ -7,6 +7,8 @@
 #include <random>
 
 void cong::Game::shuffleCards() {
-  std::shuffle(cardsChance.begin(), cardsChance.end(), std::mt19937(std::random_device()()));
+  for (int i=0; i<10; i++) {
+    std::shuffle(cardsChance.begin(), cardsChance.end(), std::mt19937(std::random_device()()));
+  }
 }
 
