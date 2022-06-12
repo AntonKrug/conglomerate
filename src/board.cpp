@@ -6,7 +6,6 @@
 #include "board.h"
 
 cong::Board::Board() {
-  listTiles();
 }
 
 void cong::Board::listTiles() const {

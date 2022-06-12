@@ -30,12 +30,12 @@ void handleCard(const cong::Card &card) {
 
 
 int main() {
-  std::cout << "Hello, World!" << std::endl;
-
   cong::Player player("Meno");
   game.currentPlayer = &player;
   game.players.push_back(&player);
   game.shuffleCards();
+
+  game.board.listTiles();
 
   for (const auto &c:game.cardsChance) {
     handleCard(c);
