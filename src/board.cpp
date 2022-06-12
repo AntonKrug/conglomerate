@@ -52,3 +52,15 @@ void cong::Board::listTiles() {
   }
 }
 
+
+void cong::Board::reset() {
+  for (auto tile:tiles) {
+    if (tile->canBePurchased) {
+      auto aProperty = dynamic_cast<cong::Tile::Property *>(tile);
+
+      aProperty->owner     = nullptr;
+      aProperty->mortgaged = false;
+    }
+  }
+}
+
