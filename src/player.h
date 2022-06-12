@@ -16,7 +16,7 @@ namespace cong {
   class Player {
   private:
     std::vector<Card> cards;
-    int cash; // when negative then owning money
+    int cash; // when negative then owning money in (k units)
     unsigned int position;
 
   public:
