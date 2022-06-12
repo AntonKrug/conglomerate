@@ -23,10 +23,16 @@ namespace cong {
     std::queue<cong::Player*> players;
     cong::Player* currentPlayer;
 
+    static Card cardGetOutJail;
+
     // TODO: can the card's init be abstracted away?
     // chance deck (index 0) and community deck (index 1) in one array
     std::array<std::deque<cong::Card>, 2> deck{{
       {
+        cardGetOutJail,
+
+        cardGetOutJail,
+
         cong::Card("Advance to Roscommon.", false, 0),
         // TODO advance to a tile
 
@@ -48,16 +54,6 @@ namespace cong {
 
         cong::Card("Pay private school fees of $37k.", false, -37),
 
-        cong::Card("Get out of Jail card. This card may be kept until needed or sold.", true, 0, [] (cong::Game &game) {
-          // TODO: does player need state for being stuck in jail? So we can unstuck him?
-          // TODO: does the card have value, to be sold?
-        }),
-
-        cong::Card("Get out of Jail card. This card may be kept until needed or sold.", true, 0, [] (cong::Game &game) {
-          // TODO: does player need state for being stuck in jail? So we can unstuck him?
-          // TODO: does the card have value, to be sold?
-        }),
-
         cong::Card("Rush hour traffic! Go back 3 spaces.", false, 0, [] (cong::Game &game) {
           game.currentPlayer->moveSteps(-3);
           // Do i need to trigger tile action?
@@ -70,6 +66,8 @@ namespace cong {
         cong::Card("Sell your shares for a profit. Collect $37k.", false, 37),
 
       }, {
+
+        cardGetOutJail,
 
         cong::Card("You win tickets to a sold out All-Ireland final and sell for a huge profit. Collect $5k.", false, 5),
 
@@ -88,8 +86,6 @@ namespace cong {
         // TODO prepare for long line text of the cards // support multiline?
 
         cong::Card("Your car insurance claim is settled. Collect $6k", false, 6),
-
-        cong::Card("Get out of Jail card. This card may be kept until needed or sold.", true, 0),
 
         cong::Card("You are investigated for identity fraud. Go to jail. Move directly to jail. Do not pass go. Do not collect $50k.", true, 0),
       }
