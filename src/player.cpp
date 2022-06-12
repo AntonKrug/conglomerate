@@ -16,10 +16,12 @@ cong::Player::Player(std::string name) :
   playing(true)
   {}
 
+
 int cong::Player::getNetWorth() {
   std::cout << "Player " << name << " has some net worth and " << cards.size() << " cards";
   return 0;
 }
+
 
 void cong::Player::moneyFromBank(int amount) {
   if (amount > 0) {
@@ -39,13 +41,24 @@ void cong::Player::moneyFromBank(int amount) {
 
 }
 
+
 void cong::Player::moveToPosition(unsigned int destinationPosition) {
   std::cout << "Player moves to " << destinationPosition << std::endl;
   position = destinationPosition;
 }
+
 
 void cong::Player::moveSteps(int steps) {
   // TODO: check for board overflow (can go to negative too)
   std::cout << "Player moves by " << steps << " steps " << std::endl;
   position += steps;
 }
+
+
+void cong::Player::gainCard(cong::Card card) {
+  std::cout << "Player gained a card " << std::endl;
+  // TODO: cards have just description, not the titles, displaying
+  // titles would be have to be implemented, only for jail cards anyway
+  cards.push_back(std::move(card));
+}
+

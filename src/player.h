@@ -25,6 +25,8 @@ namespace cong {
 
     explicit Player(std::string name);
 
+    void gainCard(Card card);
+
     void moveToPosition(unsigned int destinationPosition);
 
     void moveSteps(int steps);
