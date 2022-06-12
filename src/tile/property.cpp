@@ -17,7 +17,7 @@ cong::Tile::Property::Property(
     std::string shortNameInit,
     std::string descriptionInit,
     const unsigned int priceInit,
-    std::array<unsigned int, 5> rentInit,
+    std::array<unsigned int, 6> rentInit,
     const int mortageInit):
 
     Tile::Basic(typeInit,

@@ -28,7 +28,7 @@ cong::Tile::Utility::Utility(
         std::move(nameShortInit),
         std::move(""),
         priceInit,
-        {rentInit, rentBothInit, 0, 0, 0},
+        {rentInit, rentBothInit, 0, 0, 0, 0},
         mortageInit)
 {
   // Do nothing in the constructor

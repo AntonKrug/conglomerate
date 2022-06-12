@@ -22,17 +22,17 @@ namespace cong::Tile {
 
     cong::Player *owner;
 
-    // For County 4 levels of houses to rent + level 5 is hotel rent
-    // For Province 1-4 rents for how many provinces are owned
-    // For Utility 1-2 rents for how many utilities are owned
-    std::array<unsigned int, 5> rent;
+    // For County level 0 for no upgrades, 4 levels of houses to rent + level 5 is hotel rent
+    // For Province 0-3 rents for how many provinces are owned (1-4)
+    // For Utility 0-1 rents for how many utilities are owned (1-2)
+    std::array<unsigned int, 6> rent;
 
     Property(Tile::Type typeInit,
              std::string nameInit,
              std::string shortNameInit,
              std::string descriptionInit,
              unsigned int priceInit,
-             std::array<unsigned int, 5> rentInit,
+             std::array<unsigned int, 6> rentInit,
              int mortageInit);
 
     virtual void displayTile(void) = 0;

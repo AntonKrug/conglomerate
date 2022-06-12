@@ -18,7 +18,7 @@ namespace cong::Tile {
         std::string nameInit,
         std::string nameShortInit,
         unsigned int priceInit,
-        std::array<unsigned int, 5> rentInit,
+        std::array<unsigned int, 6> rentInit,
         int mortageInit);
 
 
