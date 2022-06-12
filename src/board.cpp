@@ -44,7 +44,7 @@ cong::Tile::County cong::Board::cork(       "Cork",         "C:C ", cong::Tile::
 cong::Tile::County cong::Board::roscommon(  "Roscommon",    "C:RN", cong::Tile::Color::Navy,   99u, {{ 10u, 50u, 150u, 325u, 350u, 425u }}, 50u, 50u);
 
 cong::Tile::Nop cong::Board::go(            "go",           "-go-", "Collect $50k as you pass 'go'");
-cong::Tile::Nop cong::Board::parking(       "Free parking", "Free", "Collect $50k as you pass 'go'");
+cong::Tile::Nop cong::Board::parking(       "Free parking", "Free", "You can stay here for free");
 
 cong::Tile::PickCard cong::Board::chance(   cong::Deck::Chance);
 cong::Tile::PickCard cong::Board::community(cong::Deck::Community);
