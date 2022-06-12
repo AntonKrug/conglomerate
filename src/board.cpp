@@ -45,20 +45,9 @@ cong::Tile::County cong::Board::roscommon(  "Roscommon",   "C:RN", cong::Tile::C
 
 
 
-cong::Board::Board() {
-}
-
-
-void cong::Board::listTiles() const {
+void cong::Board::listTiles() {
   for (auto tile:tiles) {
     tile->displayTile();
   }
 }
 
-
-cong::Board::~Board() {
-//  for (auto tile:tiles) {
-//    delete tile;
-//  }
-
-}

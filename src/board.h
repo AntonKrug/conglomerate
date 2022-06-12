@@ -56,7 +56,7 @@ namespace cong {
     static cong::Tile::County roscommon;
 
   public:
-    const std::array<cong::Tile::Basic *, 28> tiles = {{
+    constexpr static std::array<cong::Tile::Basic *, 28> tiles = {{
       &post,
       &internet,
 
@@ -96,13 +96,7 @@ namespace cong {
       &roscommon,
     }};
 
-    Board();
-
-    ~Board();
-
-    void listTiles() const;
-
-//    const std::array<int, 1> tiles = {{1}};
+    static void listTiles();
 
   };
 
