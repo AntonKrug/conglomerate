@@ -16,7 +16,9 @@
 namespace cong {
   class Game {
   public:
-    std::list<Player> players;
+    Board board;
+    std::list<Player*> players;
+    Player* currentPlayer;
 
 
     std::deque<Card> cardsChance = {
@@ -65,6 +67,7 @@ namespace cong {
         cong::Card("Collect 1000$ profits for chartering your private helicopter.", false, 1000),
         cong::Card("Your colleagues hire your holiday home for a week. Collect 100$ from each player.", false, 0),
         // TODO access to the Game state and all players
+        // TODO can that trigger negative on non-active player, support auction for non-playing player
         // TODO prepare for long line text of the cards // support multiline?
         cong::Card("Your car insurance claim is settled. Collect 250$", false, 250),
         cong::Card("Get out of Jail card. This card may be kept until needed or sold.", true, 0),
