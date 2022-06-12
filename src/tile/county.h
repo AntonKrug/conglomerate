@@ -9,6 +9,8 @@
 #include "tile/color.h"
 #include "tile/property.h"
 
+#include <iostream>
+
 namespace cong::Tile {
 
   class County : public Tile::Property {
@@ -16,16 +18,34 @@ namespace cong::Tile {
     Color color;
     int upgradeLevel;
 
-    int costHouse; // upgrade 1-4 levels
-    int costHotel; // upgrade to level 5 hotel
+    unsigned int costHouse; // upgrade to levels 1-4
+    unsigned int costHotel; // upgrade to level 5 hotel
 
 
+    County(
+        std::string nameInit,
+        std::string nameShortInit,
+        cong::Tile::Color colorInit,
+        unsigned int priceInit,
+        std::array<unsigned int, 6> rentInit,
+        unsigned int costHouseInit,
+        unsigned int costHotelInit,
+        unsigned int mortageInit
+        );
 
-    void upgradeIncrement();
+    void upgradeIncrement(void) {
 
-    void upgradeStripDown();
+    }
 
-    void doAction(Player &currentPlayer);
+    void upgradeStripDown(void) {
+
+    }
+
+    void displayTile() override {
+      std::cout << "County " << name << std::endl;
+    }
+
+//    void doAction(Player &currentPlayer);
   };
 
 }
