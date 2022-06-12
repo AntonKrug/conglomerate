@@ -18,7 +18,7 @@ cong::tile::Property::Property(
     std::string descriptionInit,
     const unsigned int priceInit,
     std::array<unsigned int, 6> rentInit,
-    const unsigned int mortgageInit):
+    const unsigned int mortgageInit) noexcept:
 
     tile::Basic(typeInit,
                 std::move(nameInit),

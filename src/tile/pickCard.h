@@ -15,7 +15,7 @@ namespace cong::tile {
   public:
     const cong::Deck deck;
 
-    explicit PickCard(cong::Deck deckInit);
+    explicit PickCard(cong::Deck deckInit) noexcept;
 
     void displayTile() override;
   };

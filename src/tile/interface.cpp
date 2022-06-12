@@ -14,7 +14,7 @@ cong::tile::Basic::Basic(const cong::tile::Type typeInit,
                          std::string nameInit,
                          std::string nameShortInit,
                          std::string descriptionInit,
-                         const bool canBePurchasedInit):
+                         const bool canBePurchasedInit) noexcept :
 
                          type(typeInit),
                          name(std::move(nameInit)),

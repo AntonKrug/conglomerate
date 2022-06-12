@@ -15,7 +15,7 @@ namespace cong::tile {
 class Nop: public cong::tile::Basic {
 public:
 
-  Nop(std::string nameInit, std::string nameShortInit, std::string descriptionInit);
+  Nop(std::string nameInit, std::string nameShortInit, std::string descriptionInit) noexcept;
 
 public:
   void displayTile() override;

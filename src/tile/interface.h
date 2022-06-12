@@ -26,7 +26,7 @@ namespace cong::tile {
           std::string nameInit,
           std::string nameShortInit,
           std::string descriptionInit,
-          bool canBePurchasedInit);
+          bool canBePurchasedInit) noexcept;
 
     virtual void displayTile() = 0;
 

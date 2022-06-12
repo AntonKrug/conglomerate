@@ -12,7 +12,7 @@
 static_assert(!std::is_abstract<cong::tile::Nop>(), "cong::tile::Nop should not be abstract");
 
 
-cong::tile::Nop::Nop(std::string nameInit, std::string nameShortInit, std::string descriptionInit) :
+cong::tile::Nop::Nop(std::string nameInit, std::string nameShortInit, std::string descriptionInit) noexcept :
   cong::tile::Basic(
       cong::tile::Type::Nop,
       std::move(nameInit),

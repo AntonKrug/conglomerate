@@ -11,7 +11,7 @@
 static_assert(!std::is_abstract<cong::tile::PickCard>(), "cong::tile::PickCard should not be abstract");
 
 
-cong::tile::PickCard::PickCard(const cong::Deck deck) :
+cong::tile::PickCard::PickCard(const cong::Deck deck) noexcept :
   Basic(
       cong::tile::Type::PickCard,
       cong::deckToString(deck),

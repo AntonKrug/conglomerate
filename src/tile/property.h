@@ -33,7 +33,7 @@ namespace cong::tile {
              std::string descriptionInit,
              unsigned int priceInit,
              std::array<unsigned int, 6> rentInit,
-             unsigned int mortgageInit);
+             unsigned int mortgageInit) noexcept;
 
   };
 
