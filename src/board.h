@@ -28,6 +28,8 @@ namespace cong {
 
     Board();
 
+    ~Board();
+
     void listTiles() const;
 
 //    const std::array<int, 1> tiles = {{1}};

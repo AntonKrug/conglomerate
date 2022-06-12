@@ -13,3 +13,11 @@ void cong::Board::listTiles() const {
     tile->displayTile();
   }
 }
+
+
+cong::Board::~Board() {
+  for (auto tile:tiles) {
+    delete tile;
+  }
+
+}
