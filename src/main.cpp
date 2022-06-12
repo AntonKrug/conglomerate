@@ -1,5 +1,6 @@
 #include "board.h"
 #include "card/card.h"
+#include "card/deck.h"
 #include "game.h"
 
 #include <iostream>
@@ -35,13 +36,13 @@ int main() {
   game.players.push(&player);
   game.shuffleCards();
 
-  game.board.listTiles();
+  cong::Board::listTiles();
 
-  for (const auto &c:game.cards[0]) {
+  for (const auto &c:game.deck[cong::deckToInt(cong::CardDeck::Chance)]) {
     handleCard(c);
   }
 
-  for (const auto &c:game.cards[1]) {
+  for (const auto &c:game.deck[cong::deckToInt(cong::CardDeck::Community)]) {
     handleCard(c);
   }
 

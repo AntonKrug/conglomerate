@@ -25,7 +25,7 @@ namespace cong {
 
     // TODO: can the card's init be abstracted away?
     // chance deck (index 0) and community deck (index 1) in one array
-    std::array<std::deque<cong::Card>, 2> cards{{
+    std::array<std::deque<cong::Card>, 2> deck{{
       {
         cong::Card("Advance to Roscommon.", false, 0),
         // TODO advance to a tile
