@@ -14,7 +14,7 @@ cong::Player::Player(std::string name) :
   position(0),
   cards(),
   playing(true),
-  stuckInJail(false),
+  stuckInJail(false)
   {}
 
 
