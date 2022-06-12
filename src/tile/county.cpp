@@ -12,7 +12,7 @@ cong::Tile::County::County(
     unsigned int priceInit,
     std::array<unsigned int, 6> rentInit,
     unsigned int costToUpgradeInit,
-    unsigned int mortageInit) :
+    unsigned int mortgageInit) :
 
     Tile::Property(
         cong::Tile::Type::County,
@@ -21,7 +21,7 @@ cong::Tile::County::County(
         "",
         priceInit,
         rentInit,
-        mortageInit),
+        mortgageInit),
 
     upgradeLevel(0),
     color(colorInit),

@@ -18,7 +18,7 @@ cong::Tile::Property::Property(
     std::string descriptionInit,
     const unsigned int priceInit,
     std::array<unsigned int, 6> rentInit,
-    const int mortageInit):
+    const unsigned int mortgageInit):
 
     Tile::Basic(typeInit,
                std::move(nameInit),
@@ -26,8 +26,8 @@ cong::Tile::Property::Property(
                std::move(descriptionInit),
                true),
     price(priceInit),
-    mortaged(false),
-    mortage(mortageInit),
+    mortgaged(false),
+    mortgage(mortgageInit),
     owner(nullptr),
     rent(rent)
     {

@@ -19,7 +19,7 @@ namespace cong::Tile {
             unsigned int priceInit,
             unsigned int rentInit,
             unsigned int rentBothInit,
-            int mortageInit);
+            unsigned int mortgageInit);
 
     void displayTile(void) override;
 

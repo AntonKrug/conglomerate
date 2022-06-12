@@ -20,7 +20,7 @@ cong::Tile::Utility::Utility(
     const unsigned int priceInit,
     const unsigned int rentInit,
     const unsigned int rentBothInit,
-    const int mortageInit):
+    const unsigned int mortgageInit):
 
     Property(
         Type::Utility,
@@ -29,7 +29,7 @@ cong::Tile::Utility::Utility(
         std::move(""),
         priceInit,
         {rentInit, rentBothInit, 0, 0, 0, 0},
-        mortageInit)
+        mortgageInit)
 {
   // Do nothing in the constructor
 }

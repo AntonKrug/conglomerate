@@ -17,8 +17,8 @@ namespace cong::Tile {
   public:
     unsigned int price;
 
-    bool mortaged;
-    int mortage;
+    bool mortgaged;
+    unsigned int mortgage;
 
     cong::Player *owner;
 
@@ -33,7 +33,7 @@ namespace cong::Tile {
              std::string descriptionInit,
              unsigned int priceInit,
              std::array<unsigned int, 6> rentInit,
-             int mortageInit);
+             unsigned int mortgageInit);
 
 //    virtual void displayTile(void) = 0;
 

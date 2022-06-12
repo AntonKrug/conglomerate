@@ -27,7 +27,7 @@ namespace cong::Tile {
         unsigned int priceInit,
         std::array<unsigned int, 6> rentInit,
         unsigned int costToUpgradeInit,
-        unsigned int mortageInit
+        unsigned int mortgageInit
         );
 
     void upgradeIncrement(void) {

@@ -13,7 +13,7 @@ cong::Tile::Province::Province(
     std::string nameShortInit,
     unsigned int priceInit,
     std::array<unsigned int, 6> rentInit,
-    int mortageInit):
+    unsigned int mortgageInit):
 
     Property(
         Type::Province,
@@ -22,7 +22,7 @@ cong::Tile::Province::Province(
         std::move(""),
         priceInit,
         std::move(rentInit),
-        mortageInit
+        mortgageInit
         )
 
 {
