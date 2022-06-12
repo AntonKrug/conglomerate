@@ -9,7 +9,6 @@
 #include "player.h"
 #include "card/card.h"
 #include "board.h"
-#include "bank.h"
 
 #include <queue>
 
@@ -17,7 +16,8 @@ namespace cong {
   class Game {
   public:
     cong::Board board;
-    cong::Bank bank; // TODO: Do I need a bank at all
+    int housesAvaiable = 36;
+    int hotelsAvaiable = 12;
     std::queue<cong::Player*> players;
     cong::Player* currentPlayer;
 
