@@ -15,10 +15,10 @@ namespace cong::Tile {
 
   class Property : public cong::Tile::Basic {
   public:
-    unsigned int price;
+    const unsigned int price;
 
     bool mortgaged;
-    unsigned int mortgage;
+    const unsigned int mortgage;
 
     cong::Player *owner;
 
