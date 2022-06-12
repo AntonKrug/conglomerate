@@ -12,6 +12,7 @@
 #include "tile/county.h"
 #include "tile/nop.h"
 #include "tile/pickCard.h"
+#include "tile/action.h"
 
 #include <array>
 
@@ -55,8 +56,12 @@ namespace cong {
     static cong::tile::PickCard chance;
     static cong::tile::PickCard community;
 
+    static cong::tile::Action goToJail;
+    static cong::tile::Action incomeTax;
+    static cong::tile::Action dutyPayment;
+
   public:
-    constexpr static std::array<cong::tile::Basic *, 28> tiles = {{
+    constexpr static std::array<cong::tile::Basic *, 31> tiles = {{
       &post,
       &internet,
 
@@ -93,7 +98,11 @@ namespace cong {
       &chance,
       &chance,
       &community,
-      &community
+      &community,
+
+      &goToJail,
+      &dutyPayment,
+      &incomeTax,
     }};
 
 

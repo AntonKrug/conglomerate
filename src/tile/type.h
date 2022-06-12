@@ -10,13 +10,11 @@ namespace cong::tile {
 
   enum class Type : unsigned int {
     Nop,
-    StampDuty,
+    Action,
     Jail,
-    GoToJail,
     Utility,
     County,
     Province,
-    IncomeTax,
     PickCard,
   };
 

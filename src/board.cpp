@@ -41,6 +41,11 @@ cong::tile::Nop cong::Board::parking(       "Free parking", "Free", "You can sta
 cong::tile::PickCard cong::Board::chance(   cong::Deck::Chance);
 cong::tile::PickCard cong::Board::community(cong::Deck::Community);
 
+cong::tile::Action cong::Board::goToJail(   "Go to Jail",   "GoTJ", "Go directly to Jail", true, 0, 0);
+cong::tile::Action cong::Board::incomeTax(  "Income tax",   "TAX",  "Pay $50k or 2% of your net worth", false, 50, 2);
+cong::tile::Action cong::Board::dutyPayment("Duty payment", "Duty", "Pay $25k", false, 25, 100);
+
+
 
 void cong::Board::listTiles() {
   for (auto tile:tiles) {
