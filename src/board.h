@@ -62,47 +62,52 @@ namespace cong {
 
   public:
     constexpr static std::array<cong::tile::Basic *, 31> tiles = {{
-      &post,
-      &internet,
-
-      &munster,
-      &connaught,
-      &leinster,
-      &ulster,
+      &go,
 
       &westmeath,
       &donegal,
 
+      &incomeTax,
+
+      &munster,
+
       &sligo,
+      &chance,
       &down,
       &laois,
 
+      //jail
+
       &tyrone,
       &cavan,
+      &post,
       &kerry,
+
+      &connaught,
 
       &fermanagh,
       &leitrim,
+      &community,
       &galway,
+
+      &parking,
 
       &meath,
       &kilkenny,
+      &chance,
       &offaly,
 
+      &leinster,
+
       &mayo,
+      &community,
       &dublin,
+      &ulster,
 
-      &go,
-      &parking,
-
-      &chance,
-      &chance,
-      &community,
-      &community,
-
+      &internet,
       &goToJail,
+
       &dutyPayment,
-      &incomeTax,
     }};
 
 
