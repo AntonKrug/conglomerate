@@ -9,8 +9,7 @@
 namespace cong::Tile {
 
   enum class Type : unsigned int {
-    Go,
-    FreeParking,
+    Nop,
     StampDuty,
     Jail,
     GoToJail,

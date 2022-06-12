@@ -10,6 +10,7 @@
 #include "tile/province.h"
 #include "tile/utility.h"
 #include "tile/county.h"
+#include "tile/nop.h"
 
 #include <array>
 
@@ -55,8 +56,11 @@ namespace cong {
     static cong::Tile::County cork;
     static cong::Tile::County roscommon;
 
+    static cong::Tile::Nop go;
+    static cong::Tile::Nop parking;
+
   public:
-    constexpr static std::array<cong::Tile::Basic *, 28> tiles = {{
+    constexpr static std::array<cong::Tile::Basic *, 30> tiles = {{
       &post,
       &internet,
 
@@ -94,6 +98,9 @@ namespace cong {
 
       &cork,
       &roscommon,
+
+      &go,
+      &parking,
     }};
 
 
