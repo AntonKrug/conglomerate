@@ -19,12 +19,13 @@ namespace cong {
     switch (deck) {
 
       case Deck::Chance:
-        return "Chance";
+        return "Chance card";
 
       case Deck::Community:
-        return "Community";
+        return "Community card";
 
-      // no exceptions and no default state
+      default:
+        return "";
     }
   }
 
