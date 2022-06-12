@@ -18,9 +18,7 @@ namespace cong::Tile {
     Color color;
     int upgradeLevel;
 
-    unsigned int costHouse; // upgrade to levels 1-4
-    unsigned int costHotel; // upgrade to level 5 hotel
-
+    unsigned int costToUpgrade; // upgrade to levels 1-4 of houses, then level 5 hotel
 
     County(
         std::string nameInit,
@@ -28,8 +26,7 @@ namespace cong::Tile {
         cong::Tile::Color colorInit,
         unsigned int priceInit,
         std::array<unsigned int, 6> rentInit,
-        unsigned int costHouseInit,
-        unsigned int costHotelInit,
+        unsigned int costToUpgradeInit,
         unsigned int mortageInit
         );
 
