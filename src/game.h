@@ -17,11 +17,11 @@ namespace cong {
   class Game {
   public:
     cong::Board board;
-    cong::Bank bank;
+    cong::Bank bank; // TODO: Do I need a bank at all
     std::queue<cong::Player*> players;
     cong::Player* currentPlayer;
 
-
+    // TODO: can the card's init be abstracted away?
     std::deque<cong::Card> cardsChance = {
         cong::Card("Advance to Roscommon.", false, 0),
         // TODO advance to a tile
