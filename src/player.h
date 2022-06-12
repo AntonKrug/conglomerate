@@ -6,8 +6,6 @@
 #ifndef CONGLOMERATE_PLAYER_H
 #define CONGLOMERATE_PLAYER_H
 
-#include "card/card.h"
-
 #include <string>
 #include <vector>
 
@@ -15,19 +13,19 @@ namespace cong {
 
   class Player {
   private:
-    std::vector<Card> cards;
     int cash; // when negative then owning money in (k units)
     unsigned int position;
 
   public:
     const std::string name;
+    unsigned int freeFromJailCards;
     bool playing;
     bool stuckInJail;
 
     // Single argument construction set to explicit, so no accidental/implicit casting will happen
     explicit Player(std::string name);
 
-    void gainCard(Card card);
+    void freeFromJailIncrement();
 
     unsigned int getPosition();
 

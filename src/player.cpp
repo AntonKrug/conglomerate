@@ -9,17 +9,17 @@
 #include <utility>
 
 cong::Player::Player(std::string name) :
-  name(std::move(name)),
-  cash(0),
-  position(0),
-  cards(),
-  playing(true),
-  stuckInJail(false)
+    name(std::move(name)),
+    cash(0),
+    position(0),
+    freeFromJailCards(0),
+    playing(true),
+    stuckInJail(false)
   {}
 
 
 int cong::Player::getNetWorth() {
-  std::cout << "Player " << name << " has some net worth and " << cards.size() << " cards";
+  std::cout << "Player " << name << " has some net worth and " << freeFromJailCards << " cards";
   return 0;
 }
 
@@ -64,11 +64,9 @@ void cong::Player::moveSteps(int steps) {
 }
 
 
-void cong::Player::gainCard(cong::Card card) {
-  std::cout << "Player gained a card " << std::endl;
-  // TODO: cards have just description, not the titles, displaying
-  // titles would be have to be implemented, only for jail cards anyway
-  cards.push_back(std::move(card));
+void cong::Player::freeFromJailIncrement() {
+  freeFromJailCards++;
+  std::cout << "Player gained a get out jail card, now he has " << freeFromJailCards << " cards."  << std::endl;
 }
 
 

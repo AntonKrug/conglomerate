@@ -13,7 +13,7 @@ void handleCard(const cong::Card &card) {
 
   if (card.keepTheCard) {
     std::cout << "Keeping it for later ... " << std::endl;
-    game.currentPlayer->gainCard(card);
+    game.currentPlayer->freeFromJailIncrement();
     // store the card for later use
   } else {
     // do not store the care, invoke it right now
