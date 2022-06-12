@@ -10,14 +10,13 @@
 #include "card/card.h"
 #include "board.h"
 
-#include <list>
 #include <queue>
 
 namespace cong {
   class Game {
   public:
     Board board;
-    std::list<Player*> players;
+    std::queue<Player*> players;
     Player* currentPlayer;
 
 

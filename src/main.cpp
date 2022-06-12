@@ -32,7 +32,7 @@ void handleCard(const cong::Card &card) {
 int main() {
   cong::Player player("Meno");
   game.currentPlayer = &player;
-  game.players.push_back(&player);
+  game.players.push(&player);
   game.shuffleCards();
 
   game.board.listTiles();
