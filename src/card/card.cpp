@@ -13,7 +13,7 @@ cong::Card::Card(
   std::string textInit,
   const bool keepTheCardInit,
   const int cashFlowInit,
-  std::function<void(cong::Player &, const cong::Board &)> doActionInit) :
+  std::function<void(cong::Game &)> doActionInit) :
 
   text(std::move(textInit)),
   keepTheCard(keepTheCardInit),
@@ -37,7 +37,4 @@ cong::Card::Card(
     keepTheCard(keepTheCardInit),
     cashFlow(cashFlowInit)
     {}
-
-//void cong::Card::doCommonAction(cong::Player &player) {
-//  player.moveFromBank(100);
-//}
+    

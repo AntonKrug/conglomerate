@@ -14,20 +14,19 @@
 #include <functional>
 
 namespace cong {
-  class Player;
-  class Board;
+  class Game;
 
   class Card {
   public:
     std::string text;
     bool keepTheCard;
     int cashFlow;
-    std::optional<std::function<void(cong::Player &, const cong::Board &)>> doAction;
+    std::optional<std::function<void(cong::Game &)>> doAction;
 
     Card(std::string textInit,
          bool keepTheCardInit,
          int cashFlowInit,
-         std::function<void(cong::Player &, const cong::Board &)> doActionInit);
+         std::function<void(cong::Game &)> doActionInit);
 
     Card(std::string textInit,
          bool keepTheCardInit,

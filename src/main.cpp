@@ -4,9 +4,7 @@
 
 #include <iostream>
 
-
-const cong::Board board;
-cong::Player player("Meno");
+cong::Game game;
 
 
 void handleCard(const cong::Card &card) {
@@ -15,17 +13,17 @@ void handleCard(const cong::Card &card) {
 
   if (card.keepTheCard) {
     std::cout << "Keeping it for later ... " << std::endl;
-    player.gainCard(card);
+    game.currentPlayer->gainCard(card);
     // store the card for later use
   } else {
     // do not store the care, invoke it right now
     std::cout << "Invoking it... " << std::endl;
 
-    player.moneyFromBank(card.cashFlow);
+    game.currentPlayer->moneyFromBank(card.cashFlow);
 
     if (card.doAction) {
       std::cout << "Has extra logic ... " << std::endl;
-      card.doAction.value()(player, board);
+      card.doAction.value()(game);
     }
   }
 }
@@ -34,8 +32,9 @@ void handleCard(const cong::Card &card) {
 int main() {
   std::cout << "Hello, World!" << std::endl;
 
-  cong::Game game;
-
+  cong::Player player("Meno");
+  game.currentPlayer = &player;
+  game.players.push_back(&player);
   game.shuffleCards();
 
   for (const auto &c:game.cardsChance) {

@@ -24,35 +24,35 @@ namespace cong {
     std::deque<Card> cardsChance = {
         cong::Card("Advance to Roscommon.", false, 0),
         // TODO advance to a tile
-        cong::Card("Advance to Tyrone. If you pass Go, collect 2000$.", false, 0, [] (cong::Player &p, const cong::Board &b) {
+        cong::Card("Advance to Tyrone. If you pass Go, collect 2000$.", false, 0, [] (cong::Game &game) {
           //TODO: need access to boardsearch, not just board
-          if (p.position > 10) {
-            p.moneyFromBank(2000);
+          if (game.currentPlayer->position > 10) {
+            game.currentPlayer->moneyFromBank(2000);
           }
-          p.moveToPosition(10);
+          game.currentPlayer->moveToPosition(10);
           // TODO: trigger board action, might need Game class access, to pick cards, whatever, might never happen
         }),
-        cong::Card("Advance to Offaly. If you pass Go, collect 2000$.", false, 0, [] (cong::Player &p, const cong::Board &b) {
-          if (p.position > 20) {
-            p.moneyFromBank(2000);
+        cong::Card("Advance to Offaly. If you pass Go, collect 2000$.", false, 0, [] (cong::Game &game) {
+          if (game.currentPlayer->position > 20) {
+            game.currentPlayer->moneyFromBank(2000);
           }
-          p.moveToPosition(20);
+          game.currentPlayer->moveToPosition(20);
         }),
         cong::Card("Pay private school fees of 1500$.", false, -1500),
-        cong::Card("Get out of Jail card. This card may be kept until needed or sold.", true, 0, [] (cong::Player &p, const cong::Board &b) {
+        cong::Card("Get out of Jail card. This card may be kept until needed or sold.", true, 0, [] (cong::Game &game) {
           // TODO: does player need state for being stuck in jail? So we can unstuck him?
           // TODO: does the card have value, to be sold?
         }),
-        cong::Card("Get out of Jail card. This card may be kept until needed or sold.", true, 0, [] (cong::Player &p, const cong::Board &b) {
+        cong::Card("Get out of Jail card. This card may be kept until needed or sold.", true, 0, [] (cong::Game &game) {
           // TODO: does player need state for being stuck in jail? So we can unstuck him?
           // TODO: does the card have value, to be sold?
         }),
-        cong::Card("Rush hour traffic! Go back 3 spaces.", false, 0, [] (cong::Player &p, const cong::Board &b) {
-          p.moveSteps(-3);
+        cong::Card("Rush hour traffic! Go back 3 spaces.", false, 0, [] (cong::Game &game) {
+          game.currentPlayer->moveSteps(-3);
           // Do i need to trigger tile action?
         }),
-        cong::Card("Advance to Go and collect 2000$.", false, 2000, [] (cong::Player &p, const cong::Board &b) {
-          p.moveToPosition(0);
+        cong::Card("Advance to Go and collect 2000$.", false, 2000, [] (cong::Game &game) {
+          game.currentPlayer->moveToPosition(0);
         }),
         cong::Card("Sell your shares for a profit. Collect 1500$.", false, 1500),
     };
