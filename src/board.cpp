@@ -46,6 +46,10 @@ cong::Tile::County cong::Board::roscommon(  "Roscommon",    "C:RN", cong::Tile::
 cong::Tile::Nop cong::Board::go(            "go",           "-go-", "Collect $50k as you pass 'go'");
 cong::Tile::Nop cong::Board::parking(       "Free parking", "Free", "Collect $50k as you pass 'go'");
 
+cong::Tile::PickCard cong::Board::chance(   cong::Deck::Chance);
+cong::Tile::PickCard cong::Board::community(cong::Deck::Community);
+
+
 void cong::Board::listTiles() {
   for (auto tile:tiles) {
     tile->displayTile();

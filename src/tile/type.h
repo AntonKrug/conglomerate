@@ -17,8 +17,7 @@ namespace cong::Tile {
     County,
     Province,
     IncomeTax,
-    CardCommunity,
-    CardChance
+    PickCard,
   };
 
 }

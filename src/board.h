@@ -11,6 +11,7 @@
 #include "tile/utility.h"
 #include "tile/county.h"
 #include "tile/nop.h"
+#include "tile/pickCard.h"
 
 #include <array>
 
@@ -59,8 +60,11 @@ namespace cong {
     static cong::Tile::Nop go;
     static cong::Tile::Nop parking;
 
+    static cong::Tile::PickCard chance;
+    static cong::Tile::PickCard community;
+
   public:
-    constexpr static std::array<cong::Tile::Basic *, 30> tiles = {{
+    constexpr static std::array<cong::Tile::Basic *, 36> tiles = {{
       &post,
       &internet,
 
@@ -101,6 +105,13 @@ namespace cong {
 
       &go,
       &parking,
+
+      &chance,
+      &chance,
+      &chance,
+      &community,
+      &community,
+      &community
     }};
 
 
