@@ -23,7 +23,7 @@ int cong::Player::getNetWorth() {
 
 void cong::Player::moneyFromBank(int amount) {
   if (amount > 0) {
-    std::cout << "Player gained from back " << amount << std::endl;
+    std::cout << "Player gained from bank " << amount << std::endl;
     cash += amount;
   } else if (amount < 0) {
 
