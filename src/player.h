@@ -22,6 +22,7 @@ namespace cong {
   public:
     const std::string name;
     bool playing;
+    bool stuckInJail;
 
     // Single argument construction set to explicit, so no accidental/implicit casting will happen
     explicit Player(std::string name);

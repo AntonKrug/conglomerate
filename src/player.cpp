@@ -13,7 +13,8 @@ cong::Player::Player(std::string name) :
   cash(0),
   position(0),
   cards(),
-  playing(true)
+  playing(true),
+  stuckInJail(false),
   {}
 
 
