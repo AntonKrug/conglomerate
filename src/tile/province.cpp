@@ -13,15 +13,15 @@ cong::Tile::Province::Province(
     std::string nameShortInit,
     unsigned int priceInit,
     std::array<unsigned int, 6> rentInit,
-    unsigned int mortgageInit):
+    unsigned int mortgageInit) noexcept:
 
     Property(
         Type::Province,
         std::move(nameInit),
         std::move(nameShortInit),
-        std::move(""),
+        "",
         priceInit,
-        std::move(rentInit),
+        rentInit,    // can do trivial copy, no need for std::move
         mortgageInit
         )
 
@@ -29,11 +29,11 @@ cong::Tile::Province::Province(
   // Nothing to do in the constructor
 }
 
-void cong::Tile::Province::displayTile(void) {
+void cong::Tile::Province::displayTile() {
   std::cout << "Province " << name << std::endl;
 }
 
-//int cong::Tile::Province::rentToPay(void) {
+//int cong::Tile::Province::rentToPay() {
 //  return 0;
 //}
 //

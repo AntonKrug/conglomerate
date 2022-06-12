@@ -29,7 +29,7 @@ cong::Tile::Property::Property(
     mortgaged(false),
     mortgage(mortgageInit),
     owner(nullptr),
-    rent(rent)
+    rent(rentInit)
     {
       // Nothing to do in the constructor
     }

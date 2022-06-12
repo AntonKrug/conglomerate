@@ -35,12 +35,6 @@ namespace cong::Tile {
              std::array<unsigned int, 6> rentInit,
              unsigned int mortgageInit);
 
-//    virtual void displayTile(void) = 0;
-
-//    virtual int rentToPay(void) = 0;
-
-//    virtual void doAction(Player &currentPlayer) = 0;
-
   };
 
 }

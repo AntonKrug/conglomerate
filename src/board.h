@@ -96,7 +96,9 @@ namespace cong {
       &roscommon,
     }};
 
-    static void listTiles();
+
+    static void listTiles(); // can't be listTiles() const as now it doesn't have access to the object's variables
+
 
   };
 

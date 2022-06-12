@@ -5,6 +5,8 @@
 
 #include "county.h"
 
+#include <iostream>
+
 cong::Tile::County::County(
     std::string nameInit,
     std::string nameShortInit,
@@ -12,7 +14,7 @@ cong::Tile::County::County(
     unsigned int priceInit,
     std::array<unsigned int, 6> rentInit,
     unsigned int costToUpgradeInit,
-    unsigned int mortgageInit) :
+    unsigned int mortgageInit) noexcept :
 
     Tile::Property(
         cong::Tile::Type::County,
@@ -28,3 +30,17 @@ cong::Tile::County::County(
     costToUpgrade(costToUpgradeInit)
 
     { }
+
+
+void cong::Tile::County::upgradeIncrement() {
+
+}
+
+
+void cong::Tile::County::upgradeStripDown() {
+
+}
+
+void cong::Tile::County::displayTile() {
+    std::cout << "County " << name << std::endl;
+}

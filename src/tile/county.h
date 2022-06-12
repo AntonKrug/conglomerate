@@ -9,8 +9,6 @@
 #include "tile/color.h"
 #include "tile/property.h"
 
-#include <iostream>
-
 namespace cong::Tile {
 
   class County : public Tile::Property {
@@ -28,19 +26,13 @@ namespace cong::Tile {
         std::array<unsigned int, 6> rentInit,
         unsigned int costToUpgradeInit,
         unsigned int mortgageInit
-        );
+        ) noexcept;
 
-    void upgradeIncrement(void) {
+    void upgradeIncrement();
 
-    }
+    void upgradeStripDown();
 
-    void upgradeStripDown(void) {
-
-    }
-
-    void displayTile() override {
-      std::cout << "County " << name << std::endl;
-    }
+    void displayTile() override;
 
 //    void doAction(Player &currentPlayer);
   };

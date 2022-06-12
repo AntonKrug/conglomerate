@@ -19,12 +19,12 @@ namespace cong::Tile {
         std::string nameShortInit,
         unsigned int priceInit,
         std::array<unsigned int, 6> rentInit,
-        unsigned int mortgageInit);
+        unsigned int mortgageInit) noexcept;
 
 
-    void displayTile(void) override;
+    void displayTile() override;
 
-//    int rentToPay(void) override;
+//    int rentToPay() override;
 
 //    void doAction(Player &currentPlayer) override;
 

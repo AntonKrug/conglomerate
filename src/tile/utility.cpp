@@ -20,13 +20,13 @@ cong::Tile::Utility::Utility(
     const unsigned int priceInit,
     const unsigned int rentInit,
     const unsigned int rentBothInit,
-    const unsigned int mortgageInit):
+    const unsigned int mortgageInit) noexcept :
 
     Property(
         Type::Utility,
         std::move(nameInit),
         std::move(nameShortInit),
-        std::move(""),
+        "",
         priceInit,
         {rentInit, rentBothInit, 0, 0, 0, 0},
         mortgageInit)
@@ -39,7 +39,7 @@ void cong::Tile::Utility::displayTile() {
 }
 
 //
-//int cong::Tile::Utility::rentToPay(void) {
+//int cong::Tile::Utility::rentToPay() {
 //  return 0;
 //}
 //

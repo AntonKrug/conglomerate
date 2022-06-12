@@ -8,7 +8,8 @@
 
 namespace cong {
   class Bank {
-    int houses;
+    int houses = 36;
+    int hotels = 12;
 
   };
 }
