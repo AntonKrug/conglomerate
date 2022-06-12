@@ -42,7 +42,14 @@ void cong::Player::moneyFromBank(int amount) {
 }
 
 
+void cong::Player::setPosition(unsigned int destinationPosition) {
+  std::cout << "Player moves to " << destinationPosition << std::endl;
+  position = destinationPosition;
+}
+
+
 void cong::Player::moveToPosition(unsigned int destinationPosition) {
+  // TODO: consider passing Go as getting 2000$
   std::cout << "Player moves to " << destinationPosition << std::endl;
   position = destinationPosition;
 }
@@ -50,6 +57,7 @@ void cong::Player::moveToPosition(unsigned int destinationPosition) {
 
 void cong::Player::moveSteps(int steps) {
   // TODO: check for board overflow (can go to negative too)
+  // positive one can trigger Go
   std::cout << "Player moves by " << steps << " steps " << std::endl;
   position += steps;
 }
@@ -60,5 +68,10 @@ void cong::Player::gainCard(cong::Card card) {
   // TODO: cards have just description, not the titles, displaying
   // titles would be have to be implemented, only for jail cards anyway
   cards.push_back(std::move(card));
+}
+
+
+unsigned int cong::Player::getPosition() {
+  return position;
 }
 

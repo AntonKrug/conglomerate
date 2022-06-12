@@ -17,15 +17,20 @@ namespace cong {
   private:
     std::vector<Card> cards;
     int cash; // when negative then owning money
+    unsigned int position;
 
   public:
     const std::string name;
     bool playing;
-    unsigned int position;
 
+    // Single argument construction set to explicit, so no accidental/implicit casting will happen
     explicit Player(std::string name);
 
     void gainCard(Card card);
+
+    unsigned int getPosition();
+
+    void setPosition(unsigned int destinationPosition);
 
     void moveToPosition(unsigned int destinationPosition);
 

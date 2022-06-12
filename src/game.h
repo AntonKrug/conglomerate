@@ -9,24 +9,26 @@
 #include "player.h"
 #include "card/card.h"
 #include "board.h"
+#include "bank.h"
 
 #include <queue>
 
 namespace cong {
   class Game {
   public:
-    Board board;
-    std::queue<Player*> players;
-    Player* currentPlayer;
+    cong::Board board;
+    cong::Bank bank;
+    std::queue<cong::Player*> players;
+    cong::Player* currentPlayer;
 
 
-    std::deque<Card> cardsChance = {
+    std::deque<cong::Card> cardsChance = {
         cong::Card("Advance to Roscommon.", false, 0),
         // TODO advance to a tile
 
         cong::Card("Advance to Tyrone. If you pass Go, collect 2000$.", false, 0, [] (cong::Game &game) {
           //TODO: need access to boardsearch, not just board
-          if (game.currentPlayer->position > 10) {
+          if (game.currentPlayer->getPosition() > 10) {
             game.currentPlayer->moneyFromBank(2000);
           }
           game.currentPlayer->moveToPosition(10);
@@ -34,7 +36,7 @@ namespace cong {
         }),
 
         cong::Card("Advance to Offaly. If you pass Go, collect 2000$.", false, 0, [] (cong::Game &game) {
-          if (game.currentPlayer->position > 20) {
+          if (game.currentPlayer->getPosition() > 20) {
             game.currentPlayer->moneyFromBank(2000);
           }
           game.currentPlayer->moveToPosition(20);
@@ -65,7 +67,7 @@ namespace cong {
     };
 
 
-    std::deque<Card> cardsCommunity = {
+    std::deque<cong::Card> cardsCommunity = {
         cong::Card("You win tickets to a sold out All-Ireland final and sell for a huge profit. Collect 200$.", false, 200),
 
         cong::Card("Advance to Go. Collect 2000.", false, 2000),
