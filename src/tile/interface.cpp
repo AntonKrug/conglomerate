@@ -12,13 +12,13 @@ static_assert(std::is_abstract<cong::Tile::Basic>(), "cong::Tile::Basic should b
 
 cong::Tile::Basic::Basic(const cong::Tile::Type typeInit,
                          const std::string nameInit,
-                         const std::string shortNameInit,
+                         const std::string nameShortInit,
                          const std::string descriptionInit,
                          const bool canBePurchasedInit):
 
                          type(typeInit),
                          name(std::move(nameInit)),
-                         shortName(std::move(shortNameInit)),
+                         nameShort(std::move(nameShortInit)),
                          description(std::move(descriptionInit)),
                          canBePurchased(canBePurchasedInit)
 {

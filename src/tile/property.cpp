@@ -14,7 +14,7 @@ static_assert(std::is_abstract<cong::Tile::Property>(), "cong::Tile::Property sh
 cong::Tile::Property::Property(
     const Tile::Type typeInit,
     std::string nameInit,
-    std::string shortNameInit,
+    std::string nameShortInit,
     std::string descriptionInit,
     const unsigned int priceInit,
     std::array<unsigned int, 6> rentInit,
@@ -22,7 +22,7 @@ cong::Tile::Property::Property(
 
     Tile::Basic(typeInit,
                std::move(nameInit),
-               std::move(shortNameInit),
+               std::move(nameShortInit),
                std::move(descriptionInit),
                true),
     price(priceInit),

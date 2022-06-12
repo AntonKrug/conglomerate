@@ -29,13 +29,13 @@ namespace cong::Tile {
 
     Property(Tile::Type typeInit,
              std::string nameInit,
-             std::string shortNameInit,
+             std::string nameShortInit,
              std::string descriptionInit,
              unsigned int priceInit,
              std::array<unsigned int, 6> rentInit,
              int mortageInit);
 
-    virtual void displayTile(void) = 0;
+//    virtual void displayTile(void) = 0;
 
 //    virtual int rentToPay(void) = 0;
 

@@ -18,13 +18,13 @@ namespace cong::Tile {
   public:
     Tile::Type type;
     std::string name;
-    std::string shortName;
+    std::string nameShort;
     std::string description;
     bool canBePurchased;
 
     Basic(Tile::Type typeInit,
           std::string nameInit,
-          std::string shortNameInit,
+          std::string nameShortInit,
           std::string descriptionInit,
           bool canBePurchasedInit);
 
