@@ -21,8 +21,13 @@ namespace cong {
   public:
     const std::string name;
     bool playing;
+    unsigned int position;
 
     explicit Player(std::string name);
+
+    void moveToPosition(unsigned int destinationPosition);
+
+    void moveSteps(int steps);
 
     int getNetWorth(void);
 

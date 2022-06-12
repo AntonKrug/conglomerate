@@ -11,6 +11,7 @@
 cong::Player::Player(std::string name) :
   name(std::move(name)),
   cash(0),
+  position(0),
   cards(),
   playing(true)
   {}
@@ -36,4 +37,15 @@ void cong::Player::moneyFromBank(int amount) {
     // no money movement
   }
 
+}
+
+void cong::Player::moveToPosition(unsigned int destinationPosition) {
+  std::cout << "Player moves to " << destinationPosition << std::endl;
+  position = destinationPosition;
+}
+
+void cong::Player::moveSteps(int steps) {
+  // TODO: check for board overflow (can go to negative too)
+  std::cout << "Player moves by " << steps << " steps " << std::endl;
+  position += steps;
 }
