@@ -18,11 +18,15 @@ namespace cong {
     cong::Board board;
     int housesAvaiable = 36;
     int hotelsAvaiable = 12;
+
+    // queue is nice for cycling players, but I will have to do from time to time for each so maybe use list
     std::queue<cong::Player*> players;
     cong::Player* currentPlayer;
 
     // TODO: can the card's init be abstracted away?
-    std::deque<cong::Card> cardsChance = {
+    // chance deck (index 0) and community deck (index 1) in one array
+    std::array<std::deque<cong::Card>, 2> cards{{
+      {
         cong::Card("Advance to Roscommon.", false, 0),
         // TODO advance to a tile
 
@@ -64,10 +68,9 @@ namespace cong {
         }),
 
         cong::Card("Sell your shares for a profit. Collect $37k.", false, 37),
-    };
 
+      }, {
 
-    std::deque<cong::Card> cardsCommunity = {
         cong::Card("You win tickets to a sold out All-Ireland final and sell for a huge profit. Collect $5k.", false, 5),
 
         cong::Card("Advance to Go. Collect $50k.", false, 50),
@@ -89,7 +92,8 @@ namespace cong {
         cong::Card("Get out of Jail card. This card may be kept until needed or sold.", true, 0),
 
         cong::Card("You are investigated for identity fraud. Go to jail. Move directly to jail. Do not pass go. Do not collect $50k.", true, 0),
-    };
+      }
+    }};
 
     void shuffleCards();
   };

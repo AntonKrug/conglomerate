@@ -37,11 +37,11 @@ int main() {
 
   game.board.listTiles();
 
-  for (const auto &c:game.cardsChance) {
+  for (const auto &c:game.cards[0]) {
     handleCard(c);
   }
 
-  for (const auto &c:game.cardsCommunity) {
+  for (const auto &c:game.cards[1]) {
     handleCard(c);
   }
 

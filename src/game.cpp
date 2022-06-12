@@ -8,9 +8,9 @@
 
 void cong::Game::shuffleCards() {
   for (int i=0; i<10; i++) {
-    // Shuffle 10 times
-    std::shuffle(cardsChance.begin(),    cardsChance.end(),    std::mt19937(std::random_device()()));
-    std::shuffle(cardsCommunity.begin(), cardsCommunity.end(), std::mt19937(std::random_device()()));
+    // Shuffle both decks 10 times
+    std::shuffle(cards[0].begin(), cards[0].end(), std::mt19937(std::random_device()()));
+    std::shuffle(cards[1].begin(), cards[1].end(), std::mt19937(std::random_device()()));
   }
 }
 
