@@ -13,10 +13,12 @@ namespace cong::tile {
 
   class County : public tile::Property {
   public:
+
     Color color;
     int upgradeLevel;
 
     unsigned int costToUpgrade; // upgrade to levels 1-4 of houses, then level 5 hotel
+
 
     County(
         std::string nameInit,
@@ -27,6 +29,7 @@ namespace cong::tile {
         unsigned int costToUpgradeInit,
         unsigned int mortgageInit
         ) noexcept;
+
 
     void upgradeIncrement();
 

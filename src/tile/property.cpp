@@ -11,6 +11,7 @@
 
 static_assert(std::is_abstract<cong::tile::Property>(), "cong::Tile::Property should be abstract");
 
+
 cong::tile::Property::Property(
     const tile::Type typeInit,
     std::string nameInit,
@@ -33,3 +34,4 @@ cong::tile::Property::Property(
     {
       // Nothing to do in the constructor
     }
+

@@ -7,6 +7,7 @@
 
 static cong::Game game;
 
+
 void handleCard(const cong::Card &card) {
   std::cout << " ----------------- " << std::endl;
   std::cout << "Got card: " << card.text << std::endl;
@@ -46,5 +47,4 @@ int main() {
   }
 
   return 0;
-
 }

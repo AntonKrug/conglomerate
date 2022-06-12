@@ -15,22 +15,27 @@ namespace cong {
 
   class Card {
   public:
+
     std::string text;
     bool keepTheCard;
     int cashFlow;
     std::optional<std::function<void(cong::Game &)>> doAction;
 
+
     Card(std::string textInit,
          bool keepTheCardInit,
          int cashFlowInit,
-         std::function<void(cong::Game &)> doActionInit);
+         std::function<void(cong::Game &)> doActionInit) noexcept;
+
 
     Card(std::string textInit,
          bool keepTheCardInit,
-         int cashFlowInit);
+         int cashFlowInit) noexcept;
 
-//    void doCommonAction(cong::Player &player);
+
     void swap(Card& other);
+
+
   };
 
 }

@@ -19,7 +19,8 @@ cong::tile::Nop::Nop(std::string nameInit, std::string nameShortInit, std::strin
       std::move(nameShortInit),
       std::move(descriptionInit),
       false)
-{ }
+  { }
+
 
 void cong::tile::Nop::displayTile() {
   std::cout << "No-operation tile " << name << std::endl;

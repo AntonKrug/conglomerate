@@ -15,7 +15,7 @@ cong::Player::Player(std::string name) :
     freeFromJailCards(0),
     playing(true),
     stuckInJail(false)
-  {}
+    { } // Nothing to do in the constructor
 
 
 int cong::Player::getNetWorth() {

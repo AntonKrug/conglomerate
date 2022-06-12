@@ -14,6 +14,7 @@ namespace cong::tile {
 
   class Utility: public Property {
   public:
+
     Utility(std::string nameInit,
             std::string nameShortInit,
             unsigned int priceInit,

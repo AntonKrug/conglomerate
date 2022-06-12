@@ -10,10 +10,12 @@
 
 namespace cong {
 
+
   enum class Deck {
     Chance = 0,
     Community = 1
   };
+
 
   constexpr const char *deckToString(Deck deck) noexcept {
     switch (deck) {
@@ -33,6 +35,7 @@ namespace cong {
   constexpr unsigned int deckToInt(Deck deck) {
     return static_cast<unsigned int>(deck);
   }
+
 
 }
 

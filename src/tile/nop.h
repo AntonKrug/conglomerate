@@ -12,16 +12,14 @@
 
 namespace cong::tile {
 
-class Nop: public cong::tile::Basic {
-public:
+  class Nop: public cong::tile::Basic {
+  public:
 
-  Nop(std::string nameInit, std::string nameShortInit, std::string descriptionInit) noexcept;
+    Nop(std::string nameInit, std::string nameShortInit, std::string descriptionInit) noexcept;
 
-public:
-  void displayTile() override;
+    void displayTile() override;
 
-};
-
+  };
 
 }
 

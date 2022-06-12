@@ -7,10 +7,12 @@
 
 #include <random>
 
+
 cong::Card cong::Game::cardGetOutJail("Get out of Jail card. This card may be kept until needed or sold.", true, 0, [] (cong::Game &game) {
   // TODO: does player need state for being stuck in jail? So we can unstuck him?
   // TODO: does the card have value, to be sold?
 });
+
 
 void cong::Game::shuffleCards() {
   for (int i=0; i<10; i++) {

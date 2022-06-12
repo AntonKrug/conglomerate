@@ -14,11 +14,13 @@
 
 namespace cong::menu {
 
+
   class Item {
     std::string name;
     const std::function<void (Game &)> doAction;
 
   };
+
 
 }
 

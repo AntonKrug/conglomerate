@@ -10,6 +10,7 @@
 
 namespace cong::tile {
 
+
   enum class Color : unsigned int {
     Brown,
     Blue,
@@ -18,6 +19,7 @@ namespace cong::tile {
     Red,
     Yellow
   };
+
 
   constexpr const char *colorToString(Color color) noexcept {
     switch (color) {
@@ -43,6 +45,7 @@ namespace cong::tile {
         // no exceptions and no default state
     }
   }
+
 
 }
 

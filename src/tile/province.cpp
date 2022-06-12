@@ -28,10 +28,7 @@ cong::tile::Province::Province(
         rentInit,    // can do trivial copy, no need for std::move
         mortgageInit
         )
-
-{
-  // Nothing to do in the constructor
-}
+    { } // Nothing to do in the constructor
 
 void cong::tile::Province::displayTile() {
   std::cout << "Province " << name << std::endl;

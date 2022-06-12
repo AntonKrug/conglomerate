@@ -16,11 +16,13 @@ namespace cong::tile {
 
   class Basic {
   public:
+
     tile::Type type;
     std::string name;
     std::string nameShort;
     std::string description;
     bool canBePurchased;
+
 
     Basic(tile::Type typeInit,
           std::string nameInit,
@@ -28,11 +30,13 @@ namespace cong::tile {
           std::string descriptionInit,
           bool canBePurchasedInit) noexcept;
 
+
     virtual void displayTile() = 0;
 
 //    virtual int rentToPay() = 0;
 
 //    virtual void doAction(Player &currentPlayer) = 0;
+
   };
 
 }

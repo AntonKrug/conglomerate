@@ -27,6 +27,7 @@ namespace cong::tile {
     // For Utility 0-1 rents for how many utilities are owned (1-2)
     std::array<unsigned int, 6> rent;
 
+
     Property(tile::Type typeInit,
              std::string nameInit,
              std::string nameShortInit,
@@ -34,6 +35,7 @@ namespace cong::tile {
              unsigned int priceInit,
              std::array<unsigned int, 6> rentInit,
              unsigned int mortgageInit) noexcept;
+
 
   };
 

@@ -30,9 +30,8 @@ cong::tile::Utility::Utility(
         priceInit,
         {rentInit, rentBothInit, 0, 0, 0, 0},
         mortgageInit)
-{
-  // Do nothing in the constructor
-}
+    { }  // Do nothing in the constructor
+
 
 void cong::tile::Utility::displayTile() {
   std::cout << "Utility " << name << std::endl;

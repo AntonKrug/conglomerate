@@ -10,6 +10,7 @@
 
 static_assert(std::is_abstract<cong::tile::Basic>(), "cong::Tile::Basic should be abstract");
 
+
 cong::tile::Basic::Basic(const cong::tile::Type typeInit,
                          std::string nameInit,
                          std::string nameShortInit,

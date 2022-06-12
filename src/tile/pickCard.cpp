@@ -19,7 +19,7 @@ cong::tile::PickCard::PickCard(const cong::Deck deck) noexcept :
       "Draw a card",
       false)
   , deck(deck)
-  {}
+  { }
 
 
 void cong::tile::PickCard::displayTile() {

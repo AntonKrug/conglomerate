@@ -14,9 +14,11 @@ namespace cong::tile {
 
   class Action : public Basic {
   public:
+
     const bool goToJail;
     const unsigned int payAmount;
     const unsigned int payPercentage;
+
 
     Action(
         std::string nameInit,
@@ -26,7 +28,9 @@ namespace cong::tile {
         unsigned int payAmountInit,
         unsigned int payPercentageInit) noexcept;
 
+
     void displayTile() override;
+
 
   };
 
