@@ -41,6 +41,10 @@ int main() {
     handleCard(c);
   }
 
+  for (const auto &c:game.cardsCommunity) {
+    handleCard(c);
+  }
+
   return 0;
 
 }
