@@ -1,5 +1,6 @@
 #include "board.h"
 #include "card/card.h"
+#include "game.h"
 
 #include <iostream>
 
@@ -34,8 +35,37 @@ cong::Card card("karta", true, 0, [] (cong::Player &p, const cong::Board &b) {
 int main() {
   std::cout << "Hello, World!" << std::endl;
 
-  if (card.doAction) {
-    card.doAction.value()(player, board);
+  cong::Game game;
+
+  game.shuffleCards();
+
+  for (const auto &c:game.cardsChance) {
+    std::cout << " ----------------- " << std::endl;
+    std::cout << "Got card: " << c.text << std::endl;
+
+    if (c.keepTheCard) {
+      std::cout << "Keeping it for later ... " << std::endl;
+      // store the card for later use
+    } else {
+      // do not store the care, invoke it right now
+      std::cout << "Invoking it... " << std::endl;
+
+      player.moneyFromBank(c.cashFlow);
+
+      if (c.doAction) {
+        std::cout << "Has extra logic ... " << std::endl;
+        c.doAction.value()(player, board);
+      }
+    }
+  }
+
+  if (card.keepTheCard) {
+    // store the card for later use
+  } else {
+    // do not store the care, invoke it right now
+    if (card.doAction) {
+      card.doAction.value()(player, board);
+    }
   }
 
 //  func2([] (cong::Player &pla, const cong::Board &a) {
