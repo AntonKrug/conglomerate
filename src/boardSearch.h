@@ -15,37 +15,40 @@ namespace cong {
 
   class BoardSearch {
   private:
-    Board &board;
-
     bool whereColor;
     bool whereOwner;
     bool whereType;
     bool whereMortaged;
 
-    tile::Color color;
-    Player player;
-    tile::Type type;
+    cong::tile::Color color;
+    cong::Player *player;
+    cong::tile::Type type;
     bool mortaged;
 
-    bool justCounting;
-    std::vector<menu::Item> menu;
+    unsigned int foundIndex;
+    cong::tile::Basic *foundTile;
+    std::vector<cong::menu::Item> menu;
 
-    unsigned int executeSearch(void);
+    unsigned int executeSearch(bool populateMenu, bool stopAfterFirstMatch);
 
   public:
-    BoardSearch(Board &boardInit);
+    BoardSearch();
 
-    BoardSearch *filterColor(tile::Color searchColor);
+    BoardSearch *filterColor(cong::tile::Color searchColor);
 
-    BoardSearch *filterOwner(Player &searchPlayer);
+    BoardSearch *filterOwner(cong::Player *searchPlayer);
 
-    BoardSearch *filterType(tile::Type searchType);
+    BoardSearch *filterType(cong::tile::Type searchType);
 
     BoardSearch *filterMortaged(bool searchMortaged);
 
-    unsigned int size();
+    unsigned int getSize();
 
-    std::vector<menu::Item> toMenu();
+    unsigned int getIndex();
+
+    cong::tile::Basic* getTile();
+
+    std::vector<cong::menu::Item> getMenu();
   };
 }
 

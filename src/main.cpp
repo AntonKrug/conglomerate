@@ -2,6 +2,7 @@
 #include "card/card.h"
 #include "card/deck.h"
 #include "game.h"
+#include "boardSearch.h"
 
 #include <iostream>
 
@@ -45,6 +46,10 @@ int main() {
   for (const auto &c:game.deck[cong::deckToInt(cong::Deck::Community)]) {
     handleCard(c);
   }
+
+  unsigned int size = cong::BoardSearch().filterColor(cong::tile::Color::Blue)->getSize();
+
+  std::cout << "size " << size << std::endl;
 
   return 0;
 }
