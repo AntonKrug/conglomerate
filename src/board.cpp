@@ -45,6 +45,7 @@ cong::tile::Action cong::Board::goToJail(   "Go to Jail",   "GoTJ", "Go directly
 cong::tile::Action cong::Board::incomeTax(  "Income tax",   "TAX",  "Pay $50k or 2% of your net worth", false, 50, 2);
 cong::tile::Action cong::Board::dutyPayment("Duty payment", "Duty", "Pay $25k", false, 25, 100);
 
+cong::tile::Jail   cong::Board::jail;
 
 
 void cong::Board::listTiles() {
