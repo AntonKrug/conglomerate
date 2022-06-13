@@ -31,13 +31,17 @@ unsigned int cong::BoardSearch::executeSearch(bool populateMenu, bool stopAfterF
 
     if (whereOwner || whereMortaged) {
       auto property = dynamic_cast<cong::tile::Property*>(tile);
-      if (whereOwner && player != property->owner) continue;
-      if (whereMortaged && mortaged != property->mortgaged) continue;
+      if (property) {
+        if (whereOwner && player != property->owner) continue;
+        if (whereMortaged && mortaged != property->mortgaged) continue;
+      }
     }
 
     if (whereColor) {
       auto county = dynamic_cast<cong::tile::County*>(tile);
-      if (color != county->color) continue;
+      if (county) {
+        if (color != county->color) continue;
+      }
     }
 
     // passed all checks, the tile can be counted and optionally added to the menu
