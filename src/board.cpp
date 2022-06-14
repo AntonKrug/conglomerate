@@ -48,21 +48,21 @@ cong::tile::Action cong::Board::dutyPayment("Duty payment", "Duty", "Pay $25k", 
 cong::tile::Jail   cong::Board::jail;
 
 
-void cong::Board::listTiles() {
+void cong::Board::listTiles() const {
   for (auto tile:tiles) {
     tile->displayTile();
   }
 }
 
 
-void cong::Board::reset() {
-  for (auto tile:tiles) {
-    if (tile->canBePurchased) {
-      auto aProperty = dynamic_cast<cong::tile::Property *>(tile);
-
-      aProperty->owner     = nullptr;
-      aProperty->mortgaged = false;
-    }
-  }
-}
-
+//void cong::Board::reset() {
+//  for (auto tile:tiles) {
+//    if (tile->canBePurchased) {
+//      auto aProperty = dynamic_cast<cong::tile::Property *>(tile);
+//
+//      aProperty->owner     = nullptr;
+//      aProperty->mortgaged = false;
+//    }
+//  }
+//}
+//

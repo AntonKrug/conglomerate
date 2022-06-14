@@ -9,7 +9,8 @@
 //#include "menu/item.h"
 #include "board.h"
 
-cong::BoardSearch::BoardSearch() :
+cong::BoardSearch::BoardSearch(cong::Board &boardInit) :
+    board(boardInit),
     whereName(false),
     whereColor(false),
     whereOwner(false),
@@ -39,8 +40,8 @@ unsigned int cong::BoardSearch::executeSearch(bool populateMenu, bool stopAfterF
     return 0;
   }
 
-  for (int i=0; i<Board::tiles.size(); i++) {
-    auto *tile = Board::tiles[i];
+  for (int i=0; i<board.tiles.size(); i++) {
+    auto *tile = board.tiles[i];
 
     // Searching values in all types
     if (whereName && name != tile->name) continue;

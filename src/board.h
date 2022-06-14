@@ -64,7 +64,7 @@ namespace cong {
     static cong::tile::Jail jail;
 
   public:
-    constexpr static std::array<cong::tile::Basic *, 32> tiles = {{
+    std::array<cong::tile::Basic *, 32> tiles = {{
       &go,
 
       &westmeath,
@@ -114,9 +114,7 @@ namespace cong {
     }};
 
 
-    static void listTiles(); // can't be listTiles() const as now it doesn't have access to the object's variables
-
-    static void reset();
+    void listTiles() const;
 
 
   };

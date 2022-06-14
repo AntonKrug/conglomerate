@@ -16,6 +16,7 @@
 // Forward declarations
 namespace cong {
   class Player;
+  class Board;
 
   namespace tile {
     class Basic;
@@ -32,6 +33,7 @@ namespace cong {
 
   class BoardSearch {
   private:
+    Board &board;
     bool whereName;
     bool whereColor;
     bool whereOwner;
@@ -51,7 +53,7 @@ namespace cong {
     unsigned int executeSearch(bool populateMenu, bool stopAfterFirstMatch);
 
   public:
-    BoardSearch();
+    BoardSearch(Board &boardInit);
 
     BoardSearch *filterName(std::string searchName);
 

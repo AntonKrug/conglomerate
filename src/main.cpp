@@ -38,7 +38,8 @@ int main() {
   game.players.push_back(&player);
   game.shuffleCards();
 
-  cong::Board::listTiles();
+  cong::Board board;
+  board.listTiles();
 
   for (const auto &c:game.deck[cong::deckToInt(cong::Deck::Chance)]) {
     handleCard(c);
@@ -48,10 +49,10 @@ int main() {
     handleCard(c);
   }
 
-  unsigned int size = cong::BoardSearch().filterColor(cong::tile::Color::Blue)->getSize();
+  unsigned int size = cong::BoardSearch(board).filterColor(cong::tile::Color::Blue)->getSize();
   std::cout << "size of blue tiles " << size << std::endl;
 
-  auto a = cong::BoardSearch().filterName("Dublin")->getPosition();
+  auto a = cong::BoardSearch(board).filterName("Dublin")->getPosition();
   std::cout << "index of Dublin " << a << std::endl;
 
   return 0;

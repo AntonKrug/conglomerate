@@ -46,18 +46,18 @@ cong::Game::Game():
       advanceToGo,
 
       cong::Card("Advance to Dublin.", false, 0, [] (cong::Game &game) {
-        int position = cong::BoardSearch().filterName("Dublin")->getPosition();
+        int position = cong::BoardSearch(game.board).filterName("Dublin")->getPosition();
         game.currentPlayer->setPosition(position);
       }),
 
       cong::Card("Advance to Tyrone. If you pass Go, collect $50k.", false, 0, [] (cong::Game &game) {
-        int position = cong::BoardSearch().filterName("Tyrone")->getPosition();
+        int position = cong::BoardSearch(game.board).filterName("Tyrone")->getPosition();
         game.currentPlayer->moveToPosition(position);
         // TODO: trigger board action, might need Game class access, to pick cards, whatever, might never happen
       }),
 
       cong::Card("Advance to Offaly. If you pass Go, collect $50k.", false, 0, [] (cong::Game &game) {
-        int position = cong::BoardSearch().filterName("Offaly")->getPosition();
+        int position = cong::BoardSearch(game.board).filterName("Offaly")->getPosition();
         game.currentPlayer->moveToPosition(position);
       }),
 
@@ -81,7 +81,7 @@ cong::Game::Game():
       cong::Card("Pay $12k for a 5-star spa holiday in Donegal.", false, -12),
 
       cong::Card("Advance to Westmeath.", false, 0, [] (cong::Game &game) {
-        int position = cong::BoardSearch().filterName("Westmeath")->getPosition();
+        int position = cong::BoardSearch(game.board).filterName("Westmeath")->getPosition();
         game.currentPlayer->setPosition(position);
         // i think I need to trigger boards actions
       }),
@@ -104,7 +104,7 @@ cong::Game::Game():
       cong::Card("Your insurance claim is settled. Collect $6k", false, 6),
 
       cong::Card("You are investigated for fraud. Go to jail. Do not pass go.", true, 0, [] (cong::Game &game) {
-        int position = cong::BoardSearch().filterType(cong::tile::Type::Jail)->getPosition();
+        int position = cong::BoardSearch(game.board).filterType(cong::tile::Type::Jail)->getPosition();
         game.currentPlayer->setPosition(position);
         game.currentPlayer->stuckInJail = true;
       }),
@@ -114,7 +114,6 @@ cong::Game::Game():
 
 {
   shuffleCards();
-  cong::Board::reset();
 }
 
 
