@@ -24,6 +24,10 @@ namespace cong {
 // Real declarations
 namespace cong {
   class Game {
+  private:
+    static cong::Card cardGetOutJail;
+    static cong::Card advanceToGo;
+
   public:
     cong::Board board;
     int housesAvaiable;
@@ -33,9 +37,6 @@ namespace cong {
     std::list<cong::Player*> players;
     cong::Player* currentPlayer;
     int currentPlayerIndex;
-
-    static cong::Card cardGetOutJail;
-    static cong::Card advanceToGo;
 
     // chance deck (index 0) and community deck (index 1) in one array
     std::array<std::deque<cong::Card>, 2> deck;
