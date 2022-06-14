@@ -4,7 +4,6 @@
 //
 
 #include "tile/action.h"
-#include "tile/type.h"
 
 #include <utility>
 #include <iostream>

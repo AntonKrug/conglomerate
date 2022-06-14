@@ -10,9 +10,15 @@
 #include <optional>
 #include <functional>
 
+
+// Forward declarations
 namespace cong {
   class Game;
+}
 
+
+// Real declarations
+namespace cong {
   class Card {
   public:
 

@@ -11,7 +11,7 @@
 namespace cong::tile {
 
 
-  enum class Color : unsigned int {
+  enum class Color {
     Brown,
     Blue,
     Pink,

@@ -9,9 +9,10 @@
 #include "tile/color.h"
 #include "tile/property.h"
 
+
 namespace cong::tile {
 
-  class County : public tile::Property {
+  class County : public cong::tile::Property {
   public:
 
     Color color;

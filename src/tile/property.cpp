@@ -4,7 +4,6 @@
 //
 
 #include "tile/property.h"
-#include "tile/type.h"
 
 #include <type_traits>
 #include <utility>

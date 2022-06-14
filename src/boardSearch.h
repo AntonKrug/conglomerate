@@ -8,31 +8,52 @@
 
 #include "tile/color.h"
 #include "tile/type.h"
-#include "menu/item.h"
-#include "board.h"
 
+#include <vector>
+#include <string>
+
+
+// Forward declarations
+namespace cong {
+  class Player;
+
+  namespace tile {
+    class Basic;
+  }
+
+  namespace menu {
+    class Item;
+  }
+}
+
+
+// Real declaration
 namespace cong {
 
   class BoardSearch {
   private:
+    bool whereName;
     bool whereColor;
     bool whereOwner;
     bool whereType;
-    bool whereMortaged;
+    bool whereMortgaged;
 
+    std::string name;
     cong::tile::Color color;
     cong::Player *player;
     cong::tile::Type type;
-    bool mortaged;
+    bool mortgage;
 
-    unsigned int foundIndex;
-    cong::tile::Basic *foundTile;
-    std::vector<cong::menu::Item> menu;
+    int foundIndex;
+    std::vector<cong::tile::Basic*> foundTiles;
+    std::vector<cong::menu::Item*> menu;
 
     unsigned int executeSearch(bool populateMenu, bool stopAfterFirstMatch);
 
   public:
     BoardSearch();
+
+    BoardSearch *filterName(std::string searchName);
 
     BoardSearch *filterColor(cong::tile::Color searchColor);
 
@@ -44,11 +65,11 @@ namespace cong {
 
     unsigned int getSize();
 
-    unsigned int getIndex();
+    int getIndex();
 
-    cong::tile::Basic* getTile();
+    std::vector<cong::tile::Basic*> getTiles();
 
-    std::vector<cong::menu::Item> getMenu();
+    std::vector<cong::menu::Item*> getMenu();
   };
 }
 

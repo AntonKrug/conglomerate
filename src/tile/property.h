@@ -7,10 +7,16 @@
 #define CONGLOMERATE_PROPERTY_H
 
 #include "tile/interface.h"
-#include "player.h"
 
 #include <array>
 
+// Forward declarations
+namespace cong {
+  class Player;
+}
+
+
+// Real declarations
 namespace cong::tile {
 
   class Property : public cong::tile::Basic {

@@ -4,56 +4,90 @@
 //
 #include "boardSearch.h"
 
+#include "tile/color.h"
+#include "tile/type.h"
+//#include "menu/item.h"
+#include "board.h"
+
 cong::BoardSearch::BoardSearch() :
-  whereColor(false),
-  whereOwner(false),
-  whereMortaged(false),
-  whereType(false),
-  color(cong::tile::Color::Red),  // just some init value, will be chaned later
-  player(nullptr),
-  type(cong::tile::Type::Nop),    // just some init value
-  menu({}),
-  mortaged(false),                // just some init value
-  foundIndex(0),                  // just some init value
-  foundTile(nullptr)
-  { }
+    whereName(false),
+    whereColor(false),
+    whereOwner(false),
+    whereMortgaged(false),
+    whereType(false),
+    name(""),                       // just some init value, will be changed later
+    color(cong::tile::Color::Red),  // just some init value, will be changed later
+    player(nullptr),
+    type(cong::tile::Type::Nop),    // just some init value, will be changed later
+    menu({}),
+    mortgage(false),                // just some init value, will be changed later
+    foundIndex(-1),                 // by default return (not found index)
+    foundTiles({})
+    { }
 
 
 unsigned int cong::BoardSearch::executeSearch(bool populateMenu, bool stopAfterFirstMatch) {
   unsigned int count = 0;
 
-  // If we didn't specify search criteria then no point to
-  if (!whereColor && !whereMortaged && !whereType && !whereOwner) return 0;
+  if (!whereName &&
+      !whereColor &&
+      !whereMortgaged &&
+      !whereType &&
+      !whereOwner) {
+
+    // If we didn't specify search criteria then no point to continue
+    return 0;
+  }
 
   for (int i=0; i<Board::tiles.size(); i++) {
     auto *tile = Board::tiles[i];
+
+    // Searching values in all types
+    if (whereName && name != tile->name) continue;
     if (whereType && type != tile->type) continue;
 
-    if (whereOwner || whereMortaged) {
+    // Searching in the values of the property types
+    if (whereOwner || whereMortgaged) {
       auto property = dynamic_cast<cong::tile::Property*>(tile);
       if (property) {
         if (whereOwner && player != property->owner) continue;
-        if (whereMortaged && mortaged != property->mortgaged) continue;
+        if (whereMortgaged && mortgage != property->mortgaged) continue;
+      } else {
+        // we wanted to search in property type of tiles but this is
+        // completely different type of tile, so no point to keep searching,
+        // skip the rest of the tests and do NOT save this tile as a match
+        continue;
       }
     }
 
+    // Searching in the values of the county type
     if (whereColor) {
       auto county = dynamic_cast<cong::tile::County*>(tile);
       if (county) {
         if (color != county->color) continue;
+      } else {
+        // Not even county type of tile, no point searching it then
+        continue;
       }
     }
 
-    // passed all checks, the tile can be counted and optionally added to the menu
+    // passed all tests, the tile can be counted and optionally added to the menu
     count++;
     foundIndex = i;
-    foundTile = tile;
+    foundTiles.push_back(tile);
 //    if (populateMenu) menu.push_back(cong::menu::Item(tile->name));
 
     if (stopAfterFirstMatch) break;
   }
 
   return count;
+}
+
+
+cong::BoardSearch *cong::BoardSearch::filterName(std::string searchName) {
+  whereName = true;
+  name = searchName;  // std::move
+  return this;
 }
 
 
@@ -79,8 +113,8 @@ cong::BoardSearch *cong::BoardSearch::filterType(cong::tile::Type searchType) {
 
 
 cong::BoardSearch *cong::BoardSearch::filterMortaged(bool searchMortaged) {
-  whereMortaged = true;
-  mortaged = searchMortaged;
+  whereMortgaged = true;
+  mortgage = searchMortaged;
   return this;
 }
 
@@ -90,20 +124,20 @@ unsigned int cong::BoardSearch::getSize() {
 }
 
 
-std::vector<cong::menu::Item> cong::BoardSearch::getMenu() {
+std::vector<cong::menu::Item*> cong::BoardSearch::getMenu() {
   executeSearch(true, false);
   return menu;
 }
 
 
-unsigned int cong::BoardSearch::getIndex() {
+int cong::BoardSearch::getIndex() {
   executeSearch(false, true);
   return foundIndex;
 }
 
 
-cong::tile::Basic* cong::BoardSearch::getTile() {
-  executeSearch(false, true);
-  return foundTile;
+std::vector<cong::tile::Basic*> cong::BoardSearch::getTiles() {
+  executeSearch(false, false);
+  return foundTiles;
 }
 

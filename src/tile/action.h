@@ -8,8 +8,6 @@
 
 #include "interface.h"
 
-#include <string>
-
 namespace cong::tile {
 
   class Action : public Basic {

@@ -3,9 +3,6 @@
 // License: MIT
 //
 #include "tile/utility.h"
-#include "tile/type.h"
-
-#include <string>
 
 #include <iostream>
 #include <utility>

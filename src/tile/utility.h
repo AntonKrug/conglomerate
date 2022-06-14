@@ -8,8 +8,6 @@
 
 #include "tile/property.h"
 
-#include <string>
-
 namespace cong::tile {
 
   class Utility: public Property {

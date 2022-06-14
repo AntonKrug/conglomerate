@@ -6,8 +6,6 @@
 #ifndef CONGLOMERATE_TILE_INTERFACE_H
 #define CONGLOMERATE_TILE_INTERFACE_H
 
-#include "player.h"
-
 #include "tile/type.h"
 
 #include <string>

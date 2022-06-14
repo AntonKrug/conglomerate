@@ -8,7 +8,7 @@
 
 namespace cong::tile {
 
-  enum class Type : unsigned int {
+  enum class Type {
     Nop,
     Action,
     Jail,

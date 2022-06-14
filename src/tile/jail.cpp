@@ -4,10 +4,10 @@
 //
 
 #include "jail.h"
+
 #include <type_traits>
 
 static_assert(!std::is_abstract<cong::tile::Jail>(), "cong::tile::Jail should not be abstract");
-
 
 
 cong::tile::Jail::Jail():

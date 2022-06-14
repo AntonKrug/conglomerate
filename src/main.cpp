@@ -3,6 +3,7 @@
 #include "card/deck.h"
 #include "game.h"
 #include "boardSearch.h"
+#include "player.h"
 
 #include <iostream>
 
@@ -48,8 +49,10 @@ int main() {
   }
 
   unsigned int size = cong::BoardSearch().filterColor(cong::tile::Color::Blue)->getSize();
+  std::cout << "size of blue tiles " << size << std::endl;
 
-  std::cout << "size " << size << std::endl;
+  auto a = cong::BoardSearch().filterName("Dublin")->getIndex();
+  std::cout << "index of Dublin " << a << std::endl;
 
   return 0;
 }

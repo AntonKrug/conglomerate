@@ -4,7 +4,6 @@
 //
 
 #include "tile/nop.h"
-#include "tile/type.h"
 
 #include <iostream>
 #include <type_traits>

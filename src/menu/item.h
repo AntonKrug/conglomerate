@@ -6,12 +6,17 @@
 #ifndef CONGLOMERATE_ITEM_H
 #define CONGLOMERATE_ITEM_H
 
-
-#include "game.h"
-
 #include <functional>
 #include <string>
 
+
+// Forward declarations
+namespace cong {
+  class Game;
+}
+
+
+// Real declaration
 namespace cong::menu {
 
 
