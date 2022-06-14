@@ -50,7 +50,7 @@ void cong::Player::setPosition(unsigned int destinationPosition) {
 
 
 void cong::Player::moveToPosition(unsigned int destinationPosition) {
-  // TODO: consider passing Go as getting 2000$
+  // TODO: consider passing Go as getting $50k, that is exactly on the overflow to the 0 position
   std::cout << "Player moves to " << destinationPosition << std::endl;
   position = destinationPosition;
 }
