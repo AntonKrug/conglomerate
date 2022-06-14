@@ -44,7 +44,7 @@ namespace cong {
     cong::tile::Type type;
     bool mortgage;
 
-    int foundIndex;
+    int foundPosition;
     std::vector<cong::tile::Basic*> foundTiles;
     std::vector<cong::menu::Item*> menu;
 
@@ -65,7 +65,7 @@ namespace cong {
 
     unsigned int getSize();
 
-    int getIndex();
+    int getPosition();
 
     std::vector<cong::tile::Basic*> getTiles();
 

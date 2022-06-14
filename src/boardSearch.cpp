@@ -21,7 +21,7 @@ cong::BoardSearch::BoardSearch() :
     type(cong::tile::Type::Nop),    // just some init value, will be changed later
     menu({}),
     mortgage(false),                // just some init value, will be changed later
-    foundIndex(-1),                 // by default return (not found index)
+    foundPosition(-1),                 // by default return (not found index)
     foundTiles({})
     { }
 
@@ -73,7 +73,7 @@ unsigned int cong::BoardSearch::executeSearch(bool populateMenu, bool stopAfterF
 
     // passed all tests, the tile can be counted and optionally added to the menu
     count++;
-    foundIndex = i;
+    foundPosition = i;
     foundTiles.push_back(tile);
 //    if (populateMenu) menu.push_back(cong::menu::Item(tile->name));
 
@@ -130,9 +130,9 @@ std::vector<cong::menu::Item*> cong::BoardSearch::getMenu() {
 }
 
 
-int cong::BoardSearch::getIndex() {
+int cong::BoardSearch::getPosition() {
   executeSearch(false, true);
-  return foundIndex;
+  return foundPosition;
 }
 
 
