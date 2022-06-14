@@ -35,7 +35,7 @@ void handleCard(const cong::Card &card) {
 int main() {
   cong::Player player("Meno");
   game.currentPlayer = &player;
-  game.players.push(&player);
+  game.players.push_back(&player);
   game.shuffleCards();
 
   cong::Board::listTiles();
@@ -51,7 +51,7 @@ int main() {
   unsigned int size = cong::BoardSearch().filterColor(cong::tile::Color::Blue)->getSize();
   std::cout << "size of blue tiles " << size << std::endl;
 
-  auto a = cong::BoardSearch().filterName("Dublin")->getIndex();
+  auto a = cong::BoardSearch().filterName("Dublin")->getPosition();
   std::cout << "index of Dublin " << a << std::endl;
 
   return 0;

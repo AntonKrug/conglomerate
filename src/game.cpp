@@ -4,14 +4,20 @@
 //
 #include "game.h"
 #include "player.h"
-
 #include "card/card.h"
+#include "boardSearch.h"
 
 #include <random>
+
 
 cong::Card cong::Game::cardGetOutJail("Get out of Jail card. This card may be kept until needed or sold.", true, 0, [] (cong::Game &game) {
   // TODO: does player need state for being stuck in jail? So we can unstuck him?
   // TODO: does the card have value, to be sold?
+});
+
+
+cong::Card cong::Game::advanceToGo("Advance to Go and collect $50k.", false, 0, [] (cong::Game &game) {
+  game.currentPlayer->moveToPosition(0);
 });
 
 
@@ -27,32 +33,31 @@ void cong::Game::shuffleCards() {
 cong::Game::Game():
   housesAvaiable(30),
   hotelsAvaiable(10),
-  players(),
+  players({}),
   currentPlayer(nullptr),
+  currentPlayerIndex(0),
   deck( {{
     {
       cardGetOutJail,
 
       cardGetOutJail,
 
-      cong::Card("Advance to Dublin.", false, 0),
-      // TODO advance to a tile
+      advanceToGo,
+
+      cong::Card("Advance to Dublin.", false, 0, [] (cong::Game &game) {
+        int position = cong::BoardSearch().filterName("Dublin")->getPosition();
+        game.currentPlayer->setPosition(position);
+      }),
 
       cong::Card("Advance to Tyrone. If you pass Go, collect $50k.", false, 0, [] (cong::Game &game) {
-        //TODO: need access to boardsearch, not just board
-        //          unsigned int size = cong::BoardSearch().filterColor(cong::tile::Color::Blue)->getSize();
-        if (game.currentPlayer->getPosition() > 10) {
-          game.currentPlayer->moneyFromBank(50);
-        }
-        game.currentPlayer->moveToPosition(10);
+        int position = cong::BoardSearch().filterName("Tyrone")->getPosition();
+        game.currentPlayer->moveToPosition(position);
         // TODO: trigger board action, might need Game class access, to pick cards, whatever, might never happen
       }),
 
       cong::Card("Advance to Offaly. If you pass Go, collect $50k.", false, 0, [] (cong::Game &game) {
-        if (game.currentPlayer->getPosition() > 20) {
-          game.currentPlayer->moneyFromBank(50);
-        }
-        game.currentPlayer->moveToPosition(20);
+        int position = cong::BoardSearch().filterName("Offaly")->getPosition();
+        game.currentPlayer->moveToPosition(position);
       }),
 
       cong::Card("Pay private school fees of $37k.", false, -37),
@@ -62,35 +67,46 @@ cong::Game::Game():
         // Do i need to trigger tile action?
       }),
 
-      cong::Card("Advance to Go and collect $50k.", false, 50, [] (cong::Game &game) {
-        game.currentPlayer->moveToPosition(0);
-      }),
-
       cong::Card("Sell your shares for a profit. Collect $37k.", false, 37),
 
     }, {
 
       cardGetOutJail,
 
-      cong::Card("You win tickets to a sold out All-Ireland final and sell for a huge profit. Collect $5k.", false, 5),
+      advanceToGo,
 
-      cong::Card("Advance to Go. Collect $50k.", false, 50),
-      // TODO: should the trigger on the Go tile give the money instead?
+      cong::Card("You won tickets to a exclusive event and sold them for $5k.", false, 5),
 
-      cong::Card("Pay $12k for a 4-star weekend spa break in Donegal.", false, -12),
+      cong::Card("Pay $12k for a 5-star spa holiday in Donegal.", false, -12),
 
-      cong::Card("Advance to Westmeath.", false, 0),
+      cong::Card("Advance to Westmeath.", false, 0, [] (cong::Game &game) {
+        int position = cong::BoardSearch().filterName("Westmeath")->getPosition();
+        game.currentPlayer->setPosition(position);
+        // i think I need to trigger boards actions
+      }),
 
-      cong::Card("Collect $25k profits for chartering your private helicopter.", false, 25),
+      cong::Card("Collect $25k for chartering your private jet.", false, 25),
 
-      cong::Card("Your colleagues hire your holiday home for a week. Collect $2k from each player.", false, 0),
-      // TODO access to the Game state and all players
-      // TODO can that trigger negative on non-active player, support auction for non-playing player
-      // TODO prepare for long line text of the cards // support multiline?
+      cong::Card("Your colleagues pay for your holiday. Collect $2k from each player.", false, 0, [] (cong::Game &game) {
+        int count = 0;
+        for (auto &player:game.players) {
+          if (player != game.currentPlayer && player->playing) {
+            player->moneyFromBank(-2);
+            // TODO can that trigger negative on non-active player, support auction for non-playing player
+            // might need access to the board, or whole game state to resolve this
+            count++;
+          }
+        }
+        game.currentPlayer->moneyFromBank(count * 2);
+      }),
 
-      cong::Card("Your car insurance claim is settled. Collect $6k", false, 6),
+      cong::Card("Your insurance claim is settled. Collect $6k", false, 6),
 
-      cong::Card("You are investigated for identity fraud. Go to jail. Move directly to jail. Do not pass go. Do not collect $50k.", true, 0),
+      cong::Card("You are investigated for fraud. Go to jail. Do not pass go.", true, 0, [] (cong::Game &game) {
+        int position = cong::BoardSearch().filterType(cong::tile::Type::Jail)->getPosition();
+        game.currentPlayer->setPosition(position);
+        game.currentPlayer->stuckInJail = true;
+      }),
     }
 
 }})

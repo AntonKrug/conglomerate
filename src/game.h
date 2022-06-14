@@ -8,8 +8,9 @@
 
 #include "board.h"
 
-#include <queue>
+#include <list>
 #include <array>
+#include <queue>
 
 
 // Forward declarations
@@ -29,10 +30,12 @@ namespace cong {
     int hotelsAvaiable;
 
     // queue is nice for cycling players, but I will have to do from time to time for each so maybe use list
-    std::queue<cong::Player*> players;
+    std::list<cong::Player*> players;
     cong::Player* currentPlayer;
+    int currentPlayerIndex;
 
     static cong::Card cardGetOutJail;
+    static cong::Card advanceToGo;
 
     // chance deck (index 0) and community deck (index 1) in one array
     std::array<std::deque<cong::Card>, 2> deck;
