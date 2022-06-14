@@ -37,7 +37,7 @@ namespace cong {
 
     int getNetWorth(void);
 
-    void moneyFromBank(int amount);
+    void moneyTransfer(int amount);
   };
 
 }

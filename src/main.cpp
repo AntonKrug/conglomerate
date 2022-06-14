@@ -22,7 +22,7 @@ void handleCard(const cong::Card &card) {
     // do not store the care, invoke it right now
     std::cout << "Invoking it... " << std::endl;
 
-    game.currentPlayer->moneyFromBank(card.cashFlow);
+    game.currentPlayer->moneyTransfer(card.cashFlow);
 
     if (card.doAction) {
       std::cout << "Has extra logic ... " << std::endl;

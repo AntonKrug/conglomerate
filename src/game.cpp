@@ -91,13 +91,13 @@ cong::Game::Game():
         int count = 0;
         for (auto &player:game.players) {
           if (player != game.currentPlayer && player->playing) {
-            player->moneyFromBank(-2);
+            player->moneyTransfer(-2);
             // TODO can that trigger negative on non-active player, support auction for non-playing player
             // might need access to the board, or whole game state to resolve this
             count++;
           }
         }
-        game.currentPlayer->moneyFromBank(count * 2);
+        game.currentPlayer->moneyTransfer(2 * count);
       }),
 
       cong::Card("Your insurance claim is settled. Collect $6k", false, 6),
