@@ -25,3 +25,5 @@ cong::tile::Basic::Basic(const cong::tile::Type typeInit,
 {
   // Nothing to do in the constructor
 }
+
+cong::tile::Basic::~Basic() = default;

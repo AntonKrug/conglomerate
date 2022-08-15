@@ -28,6 +28,8 @@ namespace cong::tile {
           std::string descriptionInit,
           bool canBePurchasedInit) noexcept;
 
+    virtual ~Basic();
+
 
     virtual void displayTile() = 0;
 

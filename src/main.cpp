@@ -7,10 +7,7 @@
 
 #include <iostream>
 
-static cong::Game game;
-
-
-void handleCard(const cong::Card &card) {
+void handleCard(cong::Game &game, const cong::Card &card) {
   std::cout << " ----------------- " << std::endl;
   std::cout << "Got card: " << card.text << std::endl;
 
@@ -33,26 +30,27 @@ void handleCard(const cong::Card &card) {
 
 
 int main() {
+  cong::Game game;
+
   cong::Player player("Meno");
   game.currentPlayer = &player;
   game.players.push_back(&player);
   game.shuffleCards();
 
-  cong::Board board;
-  board.listTiles();
+  game.board.listTiles();
 
   for (const auto &c:game.deck[cong::deckToInt(cong::Deck::Chance)]) {
-    handleCard(c);
+    handleCard(game, c);
   }
 
   for (const auto &c:game.deck[cong::deckToInt(cong::Deck::Community)]) {
-    handleCard(c);
+    handleCard(game, c);
   }
 
-  unsigned int size = cong::BoardSearch(board).filterColor(cong::tile::Color::Blue)->getSize();
+  unsigned int size = cong::BoardSearch(game.board).filterColor(cong::tile::Color::Blue)->getSize();
   std::cout << "size of blue tiles " << size << std::endl;
 
-  auto a = cong::BoardSearch(board).filterName("Dublin")->getPosition();
+  auto a = cong::BoardSearch(game.board).filterName("Dublin")->getPosition();
   std::cout << "index of Dublin " << a << std::endl;
 
   return 0;

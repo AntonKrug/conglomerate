@@ -65,11 +65,11 @@ namespace cong {
     static cong::tile::Jail jail;
 
   public:
-    std::array<std::shared_ptr<cong::tile::Basic>, 2> tiles;
-
-//    std::array<std::unique_ptr<cong::tile::Basic>, 29> t;
+    std::array<cong::tile::Basic*, 32> tiles;
 
     Board();
+
+    ~Board();
 
 
     void listTiles() const;
