@@ -16,6 +16,7 @@
 #include "tile/jail.h"
 
 #include <array>
+#include <memory>
 
 namespace cong {
 
@@ -64,54 +65,11 @@ namespace cong {
     static cong::tile::Jail jail;
 
   public:
-    std::array<cong::tile::Basic *, 32> tiles = {{
-      &go,
+    std::array<std::shared_ptr<cong::tile::Basic>, 2> tiles;
 
-      &westmeath,
-      &donegal,
+//    std::array<std::unique_ptr<cong::tile::Basic>, 29> t;
 
-      &incomeTax,
-
-      &munster,
-
-      &sligo,
-      &chance,
-      &down,
-      &laois,
-
-      &jail,
-
-      &tyrone,
-      &cavan,
-      &post,
-      &kerry,
-
-      &connaught,
-
-      &fermanagh,
-      &leitrim,
-      &community,
-      &galway,
-
-      &parking,
-
-      &meath,
-      &kilkenny,
-      &chance,
-      &offaly,
-
-      &leinster,
-
-      &mayo,
-      &community,
-      &dublin,
-      &ulster,
-
-      &internet,
-      &goToJail,
-
-      &dutyPayment,
-    }};
+    Board();
 
 
     void listTiles() const;
