@@ -19,7 +19,7 @@ namespace cong::tile {
     std::string name;
     std::string nameShort;
     std::string description;
-    bool canBePurchased;
+    bool canBePurchased;     // Tiles which can't be purchased will be statically allocated, do not need to run delete on them
 
 
     Basic(tile::Type typeInit,
